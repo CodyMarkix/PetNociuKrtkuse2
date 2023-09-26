@@ -40,3 +40,7 @@ Základní teplota je 20° C. Bohužel větrák ale konzumuje hodně energie. Na
 Všechny relevantní informace ohledně nastavení projektu a stavění hry by měly být dostupné v [`Docs/`](./Docs), nejdůležitější ale je.
 
 **MĚJTE UNITY 2021.3.11f1!!**
+
+![For Supporters](./Github/Isupported.png)
+
+To jsem moc rád! Najdeš se nejen svým plyšákem v kanceláři (pokud si odeslal! 😉) a zároveň tím, že v hlavním menu klikneš na Krtkuse.
