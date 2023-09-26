@@ -8,7 +8,7 @@ V projektu jsou **striktně používány 4 mezery na indentaci**. Můžete použ
 
 ## \#2 - Složené závorky po deklaracích funkce
 
-Složené závorky (curly braces) po deklaraci funkce bude vždy vedle jména. Nikdy nebude 
+Složené závorky (curly braces) po deklaraci funkce bude vždy vedle jména. Nikdy nebude používaná závorka na novém řádku.
 
 ### Správně ✔️: 
 ```C#
