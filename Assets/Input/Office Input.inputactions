@@ -1,0 +1,122 @@
+{
+    "name": "Office Input",
+    "maps": [
+        {
+            "name": "Office input",
+            "id": "9bdeae92-b79c-4904-a7bd-ec6c52fc7df3",
+            "actions": [
+                {
+                    "name": "Toggle fan",
+                    "type": "Button",
+                    "id": "34d3a8af-3c64-4967-9c2c-dafb6129ffe6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Look left",
+                    "type": "Button",
+                    "id": "7cd446ae-a414-425b-9697-98777a035a66",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Look right",
+                    "type": "Button",
+                    "id": "23144ae4-8766-44d5-9c17-c71c4ba2a507",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Toggle tablet",
+                    "type": "Button",
+                    "id": "0343170d-9e57-42f7-96bb-5c1a1ffa2280",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "921a8916-7bcf-4039-9748-ecaf86e1393e",
+                    "path": "<Keyboard>/z",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Toggle fan",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6322e7ce-926b-4fc1-95e8-ab3d62e00a87",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Look left",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "81fde95e-5052-47e1-99d0-986ad6751439",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Look right",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e9579246-0e73-4da4-9e8e-852a4ff0befe",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Toggle tablet",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Office input mouse",
+            "id": "4c9dbdbb-e3d3-4846-9098-de2e5491e3b0",
+            "actions": [
+                {
+                    "name": "Look left",
+                    "type": "Value",
+                    "id": "ae96c8fc-3fc7-4027-8d2a-f6ce02bdd192",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "ee11b250-9f04-4cc1-b5a8-50156ae608c7",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Look left",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

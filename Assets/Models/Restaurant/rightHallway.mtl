@@ -1,0 +1,32 @@
+# Blender 3.6.1 MTL File: 'rightHallway.blend'
+# www.blender.org
+
+newmtl Celling
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:/Users/hplr6/Downloads/Plastic013A_4K_Color.png
+
+newmtl Checkers
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:/Users/hplr6/Pet noci u Krtkuse/Assets/Textures/checkerboard.png
+
+newmtl Walls
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:/Users/hplr6/Downloads/WoodSiding009_4K_Color.png

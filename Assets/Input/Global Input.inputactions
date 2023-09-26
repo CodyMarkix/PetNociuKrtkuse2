@@ -1,0 +1,34 @@
+{
+    "name": "Global Input",
+    "maps": [
+        {
+            "name": "Global input",
+            "id": "15179f94-43bb-4005-b002-85849a3154b6",
+            "actions": [
+                {
+                    "name": "Quit game",
+                    "type": "Button",
+                    "id": "5397163c-218e-4337-be78-62a8d1690279",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "ac19cd4b-b45b-4ead-a92b-80b13a1f7543",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Quit game",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
