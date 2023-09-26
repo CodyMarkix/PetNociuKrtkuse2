@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoorButton : MonoBehaviour
-{
+public class DoorButton : MonoBehaviour {
     public GameObject[] doors;
     public Battery batteryScript;
 

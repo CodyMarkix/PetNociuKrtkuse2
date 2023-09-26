@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class GlobInput : MonoBehaviour
-{
+public class GlobInput : MonoBehaviour {
     public InputActionAsset globalInput;
 
     void Awake() {

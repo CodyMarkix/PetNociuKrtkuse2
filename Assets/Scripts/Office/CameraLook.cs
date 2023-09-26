@@ -6,8 +6,7 @@ using UnityEngine.InputSystem.EnhancedTouch;
 
 using ETouch = UnityEngine.InputSystem.EnhancedTouch.Touch;
 
-public class CameraLook : MonoBehaviour
-{
+public class CameraLook : MonoBehaviour {
     public InputActionAsset inputActions;
     public Animator tabletAnimator;
     public Tablet tabletScript;

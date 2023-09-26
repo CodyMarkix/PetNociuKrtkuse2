@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PhoneGuy : MonoBehaviour
-{
+public class PhoneGuy : MonoBehaviour {
     public AudioSource[] audioFiles = new AudioSource[3];
     public GameObject hangUpButton;
     public float transcriptLength;

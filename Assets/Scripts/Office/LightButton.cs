@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class LightButton : MonoBehaviour
-{
+public class LightButton : MonoBehaviour {
     [Header("Game Objects")]
     public GameObject[] hallwaylights;
     public Camera playerCamera;

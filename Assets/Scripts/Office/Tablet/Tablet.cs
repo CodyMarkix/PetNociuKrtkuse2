@@ -4,8 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
-public class Tablet : MonoBehaviour
-{
+public class Tablet : MonoBehaviour {
     public GameObject tabletScreen;
     public RenderTexture[] cameraMaterials;
     public AudioSource tabletOpenSFX;

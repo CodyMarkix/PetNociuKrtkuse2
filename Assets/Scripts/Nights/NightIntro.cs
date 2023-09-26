@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class NightIntro : MonoBehaviour
-{
+public class NightIntro : MonoBehaviour {
     public GameObject nightTextObj;
     public GameObject tabletScreen;
     private Animator animator;  

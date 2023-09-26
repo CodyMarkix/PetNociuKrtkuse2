@@ -4,14 +4,12 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public class gameOver : MonoBehaviour
-{
+public class gameOver : MonoBehaviour {
     public GameObject gameOverObj;
     public GameObject whiteNoiseImg;
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         whiteNoiseImg.SetActive(false);
         StartCoroutine(ShowText());
     }

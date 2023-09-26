@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Newspaper : MonoBehaviour
-{
+public class Newspaper : MonoBehaviour {
     public GameObject mainmenu;
     public Animator animator;
 

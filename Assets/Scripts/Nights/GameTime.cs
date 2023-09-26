@@ -4,8 +4,7 @@ using System.Threading;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameTime : MonoBehaviour
-{
+public class GameTime : MonoBehaviour {
     public TMPro.TMP_Text text;
     [System.NonSerialized]
     public int time = 0;

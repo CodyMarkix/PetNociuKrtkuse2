@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Victory : MonoBehaviour
-{
-    void Start()
-    {
+public class Victory : MonoBehaviour {
+    void Start() {
         StartCoroutine(GoBackToMenu());
     }
 

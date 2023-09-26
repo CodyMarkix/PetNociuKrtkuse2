@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Stars : MonoBehaviour
-{
+public class Stars : MonoBehaviour {
     public GameObject[] badStarsArr;
     public GameObject[] starsArr;
 

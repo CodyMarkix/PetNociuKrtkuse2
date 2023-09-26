@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MenuSprite : MonoBehaviour
-{
+public class MenuSprite : MonoBehaviour {
     public Sprite[] krtkusSprites;
     private System.Random rng = new System.Random();
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         StartCoroutine(ChangeSprite());
     }
 

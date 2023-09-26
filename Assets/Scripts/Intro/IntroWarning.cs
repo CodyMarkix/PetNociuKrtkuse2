@@ -3,13 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class IntroWarning : MonoBehaviour
-{
+public class IntroWarning : MonoBehaviour {
     public Animator[] animators;
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         foreach (Animator x in animators) {
             x.SetBool("SeenWarning", false);
         }

@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CameraButtons : MonoBehaviour
-{
+public class CameraButtons : MonoBehaviour {
     public GameObject[] camButtons;
     public Sprite[] buttonSprites;
     public Sprite[] buttonSpritesOff;

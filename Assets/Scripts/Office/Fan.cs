@@ -4,8 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
-public class Fan : MonoBehaviour
-{
+public class Fan : MonoBehaviour {
     [Header("Input")]
     public InputActionAsset inputActions;
     

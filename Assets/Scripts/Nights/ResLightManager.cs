@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class ResLightManager : MonoBehaviour
-{
+public class ResLightManager : MonoBehaviour {
     public GameObject[] lights;
 
     [Header("External scripts")]

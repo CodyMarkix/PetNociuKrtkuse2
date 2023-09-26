@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ambience : MonoBehaviour
-{
+public class Ambience : MonoBehaviour {
     public AudioSource[] ambiences;
     public bool enableRandomness;
     private int initialTime = 0;

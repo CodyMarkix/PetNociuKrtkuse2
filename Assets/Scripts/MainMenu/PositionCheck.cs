@@ -7,8 +7,7 @@ using UnityEngine.InputSystem;
 using TMPro;
 
 [RequireComponent(typeof(AudioSource))]
-public class PositionCheck : MonoBehaviour, IPointerEnterHandler
-{
+public class PositionCheck : MonoBehaviour, IPointerEnterHandler {
     public GameObject chevron;
     new AudioSource audio;
     private Vector3 offset = new Vector3(10, 0, 0);

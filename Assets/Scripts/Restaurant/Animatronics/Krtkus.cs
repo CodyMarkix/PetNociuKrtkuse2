@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Krtkus : MonoBehaviour
-{
+public class Krtkus : MonoBehaviour {
     // A MASSIVE dictionary of all of the animatronic's position, could theoretically put it in a json file
     // and make the program read it, but this the one thing I ABSOLUTELY don't want the user to tamper with without recompiling
     Dictionary<string, Vector3> restaurantPositions = new Dictionary<string, Vector3>() {
@@ -50,8 +49,7 @@ public class Krtkus : MonoBehaviour
     private Vector3 initialPos;
     System.Random rng = new System.Random();
     
-    void Start()
-    {
+    void Start() {
         StartCoroutine(giveOpportunity());
         initialPos = restaurantPositions["podium"];
     }

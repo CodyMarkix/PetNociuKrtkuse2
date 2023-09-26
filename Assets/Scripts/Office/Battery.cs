@@ -4,8 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class Battery : MonoBehaviour
-{
+public class Battery : MonoBehaviour {
     [System.NonSerialized]
     public float charge = 384f;
     
@@ -30,8 +29,7 @@ public class Battery : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         if (initialTime != timeScript.time) {
             if (lightScript.isShiningLeft || lightScript.isShiningRight || camLightManager.hasToggledLights) {
                 dischargeFloat = 1f;

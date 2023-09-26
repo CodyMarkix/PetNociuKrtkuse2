@@ -4,8 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 
-public class GameManager : MonoBehaviour
-{
+public class GameManager : MonoBehaviour {
     public GameObject customnightmenu;
     public GameObject nightsixbutton;
     public GameObject nightsevenbutton;
@@ -16,8 +15,7 @@ public class GameManager : MonoBehaviour
     public int night; // 0 = in main menu; 1 - 5 = night 1 - 5
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         int currentScene = SceneManager.GetActiveScene().buildIndex;
 
         if (currentScene == 0) {

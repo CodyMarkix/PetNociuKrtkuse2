@@ -4,8 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class TabletButton : MonoBehaviour
-{
+public class TabletButton : MonoBehaviour {
     public GameObject playercamera;
     private Animator camanim;
 

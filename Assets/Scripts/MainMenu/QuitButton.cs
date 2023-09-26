@@ -4,8 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class QuitButton : MonoBehaviour
-{
+public class QuitButton : MonoBehaviour {
     new AudioSource audio;
 
     void Start() {
