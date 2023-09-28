@@ -23,7 +23,7 @@ public class Stars : MonoBehaviour {
         map.Enable();
         map.FindAction("toggleSprites").performed += toggleSprites;
 
-        // I'm sorry
+        // Promiň
         PlayerPrefs.SetInt("badStars", 0);
         PlayerPrefs.Save();
         renderSprites();

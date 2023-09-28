@@ -21,7 +21,7 @@ public class SixAM : MonoBehaviour {
 
     void Awake() {
         map.Enable();
-        map.FindAction("SkipNight").performed += EndNight;
+        map.FindAction("SkipNight").performed += EndNightKeybind;
     }
 
     void Start() {
@@ -35,7 +35,11 @@ public class SixAM : MonoBehaviour {
         Debug.Log(SceneManager.GetActiveScene().buildIndex);
     }
 
-    public void EndNight(InputAction.CallbackContext context) {
+    public void EndNightKeybind(InputAction.CallbackContext context) {
+        EndNight();
+    }
+
+    public void EndNight() {
         krtkusak.enabled = false;
         myskusak.enabled = false;
         zajac.enabled = false;
@@ -52,19 +56,19 @@ public class SixAM : MonoBehaviour {
         StartCoroutine(SetRandomNumbers());
         yield return new WaitForSeconds(10f);
         if (scene <= 5 && scene >= 2 ) {
-            // Load the next night
+            // Načte další noc
             PlayerPrefs.SetInt("night", nextNight);
             PlayerPrefs.Save();
 
             SceneManager.LoadScene(nextNight);
         } else if (scene == 6) {
-            // Load the victory scene
+            // Načte victory scénu
             PlayerPrefs.SetInt("night", nextNight);
             PlayerPrefs.Save();
 
             SceneManager.LoadScene(8);
         } else if (scene == 7 || scene == 8) {
-            // Load the main menu
+            // Načte main menu
             if (scene == 7) {
                 PlayerPrefs.SetInt("night", nextNight);
             }

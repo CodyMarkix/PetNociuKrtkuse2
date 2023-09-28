@@ -9,13 +9,14 @@ public class Battery : MonoBehaviour {
     public float charge = 384f;
     
     [System.NonSerialized]
-    public float dischargeFloat = 0.0005f + 0.5f; // Base + Fan usage
+    public float dischargeFloat = 0.0005f + 0.5f; // Základ + Větrák
 
     [Header("External scripts")]
     public GameTime timeScript;
     public LightButton lightScript;
     public Tablet tabletScript;
     public ResLightManager camLightManager;
+    public CameraLook camLookScript;
 
     public Sprite[] batteryLevels;
     
@@ -37,19 +38,19 @@ public class Battery : MonoBehaviour {
 
             charge = charge - dischargeFloat;
 
-            if (charge < 191f) {
-                if (charge < 127f) {
-                    if (charge < 63f) {
+            if (charge < 288f) {
+                if (charge < 192f) {
+                    if (charge < 96f) {
                         if (charge == 0f) {
-                            GetComponent<Image>().sprite = batteryLevels[4]; // Is the battery empty?
+                            GetComponent<Image>().sprite = batteryLevels[4]; // Baterie je prázdná
                         } else {
-                            GetComponent<Image>().sprite = batteryLevels[3]; // Is it less than 63f?
+                            GetComponent<Image>().sprite = batteryLevels[3]; // Zbývá čtvrt baterie
                         }
                     } else {
-                        GetComponent<Image>().sprite = batteryLevels[2]; // Is it less than 127f?
+                        GetComponent<Image>().sprite = batteryLevels[2]; // Zbývá polovina baterie
                     }
                 } else {
-                    GetComponent<Image>().sprite = batteryLevels[1]; // Is it less than 191f?
+                    GetComponent<Image>().sprite = batteryLevels[1]; // Baterie je plná
                 }
             }
 
@@ -57,5 +58,10 @@ public class Battery : MonoBehaviour {
 
             initialTime = timeScript.time;
         }
+    }
+
+    void OnBatteryZero() {
+        camLookScript.DisableInput();
+        
     }
 }

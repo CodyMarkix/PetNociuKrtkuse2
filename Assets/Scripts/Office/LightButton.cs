@@ -48,7 +48,7 @@ public class LightButton : MonoBehaviour {
 
     }
 
-    // Look not everything has to be super dry ok?
+    // Prosimtě, ne každej kód musí bejt extrémně suchej, ok?
 
     void toggleLightsOff() {
         switch(gameObject.tag) {

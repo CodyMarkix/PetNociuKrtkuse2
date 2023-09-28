@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3614138530596032385
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3614138530596032387}
+  - component: {fileID: 3614138530596032386}
+  m_Layer: 0
+  m_Name: LightMapManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3614138530596032387
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3614138530596032385}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -20.157656, y: -5.7902503, z: -4.9263163}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3614138530596032386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3614138530596032385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c2f2ed2c96af754d97a76e5ee4368d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  darkLightmapDir:
+  - {fileID: 2800000, guid: 0d6dd5dd7651f47478e5da7d1011191f, type: 3}
+  darkLightmapColor:
+  - {fileID: 2800000, guid: 23fe4b5a360d2d94f9226c9855f354b6, type: 3}
+  brightLightmapDir:
+  - {fileID: 2800000, guid: deb4221b48e751e4e8db3243731265eb, type: 3}
+  brightLightmapColor:
+  - {fileID: 2800000, guid: aef0f00af94047645a19384355d085c8, type: 3}
+  lightMaterials:
+  - {fileID: 0}
+  - {fileID: 0}
+  lights:
+  - {fileID: 0}
+  - {fileID: 0}
+  yeeterPlushie: {fileID: 0}
+  map:
+    m_Name: Map
+    m_Id: 94ef754c-e94f-4d86-b87f-3994906270f5
+    m_Asset: {fileID: 0}
+    m_Actions:
+    - m_Name: toggleDark
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: e2222d8a-d94b-4ed8-aadf-147a719ac28c
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: toggleLight
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: 9128f1b2-264c-4fb3-8c59-5780e07eb158
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Bindings:
+    - m_Name: 
+      m_Id: 9f897c03-73b4-45b6-81c5-caecea0cd29d
+      m_Path: <Keyboard>/numpad1
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: toggleDark
+      m_Flags: 0
+    - m_Name: 
+      m_Id: b733db20-4a1e-41d9-b543-99f43e49d576
+      m_Path: <Keyboard>/numpad2
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: toggleLight
+      m_Flags: 0

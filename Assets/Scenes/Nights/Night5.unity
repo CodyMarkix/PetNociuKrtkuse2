@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 112000000, guid: 96de7207ad22d914fafd0ae19521366a, type: 2}
-  m_LightingSettings: {fileID: 4890085278179872738, guid: 71e7130b0f3fdb24588ebf239d2e673b, type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 71787a70f1f5be94a91edd583de54179, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -959,7 +959,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 193039719}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
   m_Name: 
@@ -2934,7 +2934,7 @@ MonoBehaviour:
   fanIcon: {fileID: 607022471}
   iconAnimator: {fileID: 607022473}
   tempValueText: {fileID: 441335910}
-  heatIMG: {fileID: 0}
+  deathPanel: {fileID: 0}
   selfAnimator: {fileID: 564310044}
   timeScript: {fileID: 1219536329}
   batteryScript: {fileID: 1443767999}
@@ -7951,6 +7951,99 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1001 &1218286687
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3614138530596032385, guid: b117aeb1debf99245954b42f4a5c548f, type: 3}
+      propertyPath: m_Name
+      value: LightMapManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 3614138530596032386, guid: b117aeb1debf99245954b42f4a5c548f, type: 3}
+      propertyPath: yeeterPlushie
+      value: 
+      objectReference: {fileID: 1232315952}
+    - target: {fileID: 3614138530596032386, guid: b117aeb1debf99245954b42f4a5c548f, type: 3}
+      propertyPath: lights.Array.data[0]
+      value: 
+      objectReference: {fileID: 2042209205}
+    - target: {fileID: 3614138530596032386, guid: b117aeb1debf99245954b42f4a5c548f, type: 3}
+      propertyPath: lights.Array.data[1]
+      value: 
+      objectReference: {fileID: 526452386}
+    - target: {fileID: 3614138530596032386, guid: b117aeb1debf99245954b42f4a5c548f, type: 3}
+      propertyPath: lightMaterials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 279c227f21c204c42b190f6f82ef9f81, type: 2}
+    - target: {fileID: 3614138530596032386, guid: b117aeb1debf99245954b42f4a5c548f, type: 3}
+      propertyPath: lightMaterials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 00a26f7b6ea17a243aa698ed96808d34, type: 2}
+    - target: {fileID: 3614138530596032386, guid: b117aeb1debf99245954b42f4a5c548f, type: 3}
+      propertyPath: darkLightmapDir.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 0cbcf11043b84b74582f55eaee31dd23, type: 3}
+    - target: {fileID: 3614138530596032386, guid: b117aeb1debf99245954b42f4a5c548f, type: 3}
+      propertyPath: brightLightmapDir.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: c5f30d316b04f0d4cbaf4c905e856f14, type: 3}
+    - target: {fileID: 3614138530596032386, guid: b117aeb1debf99245954b42f4a5c548f, type: 3}
+      propertyPath: darkLightmapColor.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: ab9a10be840eebf4b96f897e71bdd0b5, type: 3}
+    - target: {fileID: 3614138530596032386, guid: b117aeb1debf99245954b42f4a5c548f, type: 3}
+      propertyPath: brightLightmapColor.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: b22d1c4fbf338ed49905d3897dcea839, type: 3}
+    - target: {fileID: 3614138530596032387, guid: b117aeb1debf99245954b42f4a5c548f, type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3614138530596032387, guid: b117aeb1debf99245954b42f4a5c548f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -20.157656
+      objectReference: {fileID: 0}
+    - target: {fileID: 3614138530596032387, guid: b117aeb1debf99245954b42f4a5c548f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.7902503
+      objectReference: {fileID: 0}
+    - target: {fileID: 3614138530596032387, guid: b117aeb1debf99245954b42f4a5c548f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.9263163
+      objectReference: {fileID: 0}
+    - target: {fileID: 3614138530596032387, guid: b117aeb1debf99245954b42f4a5c548f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3614138530596032387, guid: b117aeb1debf99245954b42f4a5c548f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3614138530596032387, guid: b117aeb1debf99245954b42f4a5c548f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3614138530596032387, guid: b117aeb1debf99245954b42f4a5c548f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3614138530596032387, guid: b117aeb1debf99245954b42f4a5c548f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3614138530596032387, guid: b117aeb1debf99245954b42f4a5c548f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3614138530596032387, guid: b117aeb1debf99245954b42f4a5c548f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b117aeb1debf99245954b42f4a5c548f, type: 3}
 --- !u!1 &1219536327
 GameObject:
   m_ObjectHideFlags: 0
@@ -8310,6 +8403,11 @@ PrefabInstance:
 --- !u!4 &1232315951 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7f92afbbc9a7c5843b9a013e2a5b69b3, type: 3}
+  m_PrefabInstance: {fileID: 1232315950}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1232315952 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7f92afbbc9a7c5843b9a013e2a5b69b3, type: 3}
   m_PrefabInstance: {fileID: 1232315950}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1253830924
@@ -10864,6 +10962,7 @@ MonoBehaviour:
   lightScript: {fileID: 702662952}
   tabletScript: {fileID: 1302701340}
   camLightManager: {fileID: 764105221}
+  camLookScript: {fileID: 0}
   batteryLevels:
   - {fileID: 2096290239, guid: eb316d8ee9f3ecb4dae0782220b0e243, type: 3}
   - {fileID: 518879235, guid: eb316d8ee9f3ecb4dae0782220b0e243, type: 3}

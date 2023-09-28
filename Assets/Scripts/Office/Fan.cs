@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Fan : MonoBehaviour {
     [Header("Input")]
@@ -12,10 +12,8 @@ public class Fan : MonoBehaviour {
     public GameObject fanIcon;
     public Animator iconAnimator;
     public GameObject tempValueText;
+    public GameObject deathPanel;
 
-    [Header("UI Elements")]
-    public GameObject heatIMG;
-    
     [Header("Animation")]
     public Animator selfAnimator;
     
@@ -58,7 +56,7 @@ public class Fan : MonoBehaviour {
                 if (getTemperature() < 48) {
                     setTemperature(getTemperature() + 1);
                 } else {
-                    Application.Quit(); // Temporary solution for a death screen
+                    StartCoroutine(OnFanGoTooHigh());
                 }
             }
 
@@ -94,5 +92,11 @@ public class Fan : MonoBehaviour {
             batteryScript.dischargeFloat = batteryScript.dischargeFloat + 0.5f;
             isOn = !isOn;
         }
+    }
+
+    IEnumerator OnFanGoTooHigh() {
+        deathPanel.SetActive(true);
+        yield return new WaitForSeconds(4f);
+        SceneManager.LoadScene(7);
     }
 }

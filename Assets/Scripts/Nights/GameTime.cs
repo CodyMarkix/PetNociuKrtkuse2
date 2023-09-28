@@ -61,7 +61,7 @@ public class GameTime : MonoBehaviour {
                 break;
 
             case 86 * 6:
-                // sixAmScript.EndNight();
+                sixAmScript.EndNight();
                 break;
 
             default:
@@ -69,7 +69,7 @@ public class GameTime : MonoBehaviour {
         }
     }
 
-    // Basically just increases the time
+    // Akorát počítá vteřiny
     IEnumerator timeIncrease() {
         while (true) {
             yield return new WaitForSeconds(1);

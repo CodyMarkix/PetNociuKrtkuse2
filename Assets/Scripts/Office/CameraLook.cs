@@ -135,7 +135,7 @@ public class CameraLook : MonoBehaviour {
                         tabletAnimator.SetBool("lookingAtTablet", true);
                         StartCoroutine(playSFX());
                         tabletScript.isLooking = true;
-                        StartCoroutine(showScreen()); // Why the fuck can't just Thread.Sleep() work
+                        StartCoroutine(showScreen()); // Proč nemůže prostě kurva Thread.sleep() fungovat
                     }
                 }
             }
@@ -185,7 +185,7 @@ public class CameraLook : MonoBehaviour {
         }
     }
 
-    // For the spoops (jumpscares)
+    // For the spoops (jumpscary)
     public void DisableInput() {
         anim.SetInteger("Looking", 0);
         canDoInput = false;

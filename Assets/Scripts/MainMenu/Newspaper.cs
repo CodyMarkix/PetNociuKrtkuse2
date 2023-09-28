@@ -7,14 +7,6 @@ public class Newspaper : MonoBehaviour {
     public GameObject mainmenu;
     public Animator animator;
 
-    void Awake() {
-        // // Just to be safe
-        // this.gameObject.SetActive(true);
-
-        // Debug.Log(this.gameObject.GetComponent<Renderer>().isVisible);
-        // this.gameObject.GetComponent<CanvasRenderer>().enabled = !this.gameObject.GetComponent<Renderer>().enabled;
-    }
-
     public void ShowPaper() {
         StartCoroutine(showNewspapers());
     }
