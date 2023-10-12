@@ -77,3 +77,7 @@ crashlytics-build.properties
 # To-do list
 todo.txt
 modelheight.txt
+
+# Ignore temporaries from GameCI
+/[Aa]rtifacts/
+/[Cc]odeCoverage/

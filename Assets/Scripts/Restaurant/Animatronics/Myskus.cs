@@ -140,6 +140,10 @@ public class Myskus : MonoBehaviour {
                         break;
                 }
                 break;
+
+            case 7:
+                AILevel = PlayerPrefs.GetInt("MyskusAI");
+                break;
         }
     }
 
@@ -182,7 +186,7 @@ public class Myskus : MonoBehaviour {
     }
 
     IEnumerator InitiateJumpscare() {
-        PlayerPrefs.SetInt("night", SceneManager.GetActiveScene().buildIndex - 1);
+        PlayerPrefs.SetInt("night", SceneManager.GetActiveScene().buildIndex - 2);
         yield return new WaitForSeconds(6f);
         StartCoroutine(RunningAnimation());
     }
@@ -211,9 +215,9 @@ public class Myskus : MonoBehaviour {
         if (tabletScript.isLooking) {
             camLookScript.SwitchTablet();
         }
-        camLookScript.DisableInput();
+        camLookScript.DisableInput(0);
         jumpscareSFX.Play();
         yield return new WaitForSeconds(1.8f);
-        SceneManager.LoadScene(7);
+        SceneManager.LoadScene(9);
     }
 }

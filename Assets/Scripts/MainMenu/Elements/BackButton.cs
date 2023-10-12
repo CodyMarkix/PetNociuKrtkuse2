@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CreditsBackButton : MonoBehaviour {
+public class BackButton : MonoBehaviour {
     public GameObject mainMenu;
-    public GameObject creditsMenu;
+    public GameObject previousMenu;
 
     public void OnButtonPress() {
-        creditsMenu.SetActive(false);
+        previousMenu.SetActive(false);
         mainMenu.SetActive(true);
     }
 }

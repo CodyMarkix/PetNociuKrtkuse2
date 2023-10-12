@@ -36,7 +36,9 @@ public class SixAM : MonoBehaviour {
     }
 
     public void EndNightKeybind(InputAction.CallbackContext context) {
-        EndNight();
+        if (Debug.isDebugBuild) {
+            EndNight();
+        }
     }
 
     public void EndNight() {
@@ -66,7 +68,7 @@ public class SixAM : MonoBehaviour {
             PlayerPrefs.SetInt("night", nextNight);
             PlayerPrefs.Save();
 
-            SceneManager.LoadScene(8);
+            SceneManager.LoadScene(10);
         } else if (scene == 7 || scene == 8) {
             // Načte main menu
             if (scene == 7) {

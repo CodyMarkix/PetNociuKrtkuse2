@@ -27,7 +27,7 @@ public class IntroWarning : MonoBehaviour {
         if (PlayerPrefs.GetInt("started") == 1) {
             SceneManager.LoadScene(1);
         } else {
-            SceneManager.LoadScene(10);
+            SceneManager.LoadScene(12);
         }
     }
 }

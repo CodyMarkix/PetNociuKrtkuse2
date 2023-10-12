@@ -7,6 +7,7 @@ public class LightButton : MonoBehaviour {
     [Header("Game Objects")]
     public GameObject[] hallwaylights;
     public Camera playerCamera;
+    public PowerOutage powerOutageScript;
     public int[] test = {0, 1, 2, 3};
 
     [System.NonSerialized]
@@ -30,20 +31,22 @@ public class LightButton : MonoBehaviour {
     }
 
     void toggleLightsOn() {
-        switch(gameObject.tag) {
-            case "DoorButtonLeft":
-                hallwaylights[0].GetComponent<Light>().enabled = true;
-                isShiningLeft = true;
-                break;
+        if (!powerOutageScript.isPowerOut) {
+            switch(gameObject.tag) {
+                case "DoorButtonLeft":
+                    hallwaylights[0].GetComponent<Light>().enabled = true;
+                    isShiningLeft = true;
+                    break;
 
-            case "DoorButtonRight":
-                hallwaylights[1].GetComponent<Light>().enabled = true;
-                isShiningRight = true;
-                break;
+                case "DoorButtonRight":
+                    hallwaylights[1].GetComponent<Light>().enabled = true;
+                    isShiningRight = true;
+                    break;
 
-            default:
-                Debug.Log("How the fuck bro ._.");
-                break;
+                default:
+                    Debug.Log("How the fuck bro ._.");
+                    break;
+            }
         }
 
     }
@@ -51,20 +54,22 @@ public class LightButton : MonoBehaviour {
     // Prosimtě, ne každej kód musí bejt extrémně suchej, ok?
 
     void toggleLightsOff() {
-        switch(gameObject.tag) {
-            case "DoorButtonLeft":
-                hallwaylights[0].GetComponent<Light>().enabled = false;
-                isShiningLeft = true;
-                break;
+        if (!powerOutageScript.isPowerOut) {
+            switch(gameObject.tag) {
+                case "DoorButtonLeft":
+                    hallwaylights[0].GetComponent<Light>().enabled = false;
+                    isShiningLeft = true;
+                    break;
 
-            case "DoorButtonRight":
-                hallwaylights[1].GetComponent<Light>().enabled = false;
-                isShiningRight = true;
-                break;
+                case "DoorButtonRight":
+                    hallwaylights[1].GetComponent<Light>().enabled = false;
+                    isShiningRight = true;
+                    break;
 
-            default:
-                Debug.Log("How the fuck bro ._.");
-                break;
+                default:
+                    Debug.Log("How the fuck bro ._.");
+                    break;
+            }
         }
 
     }

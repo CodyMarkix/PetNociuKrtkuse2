@@ -161,6 +161,10 @@ public class Krtkus : MonoBehaviour {
                         break;
                 }
                 break;
+
+            case 7:
+                AILevel = PlayerPrefs.GetInt("KrtkusAI");
+                break;
         }
     }
 
@@ -209,13 +213,13 @@ public class Krtkus : MonoBehaviour {
         }
     }
 
-    IEnumerator Jumpscare() {
+    public IEnumerator Jumpscare() {
         realtimeLight.SetActive(true);
-        PlayerPrefs.SetInt("night", SceneManager.GetActiveScene().buildIndex - 1);
+        PlayerPrefs.SetInt("night", SceneManager.GetActiveScene().buildIndex - 2);
         camLookScript.SwitchTablet();
         GetComponent<Animator>().enabled = true;
         GetComponent<AudioSource>().Play();
         yield return new WaitForSeconds(1.8f);
-        SceneManager.LoadScene(7);
+        SceneManager.LoadScene(9);
     }
 }

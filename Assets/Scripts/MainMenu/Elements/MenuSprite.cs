@@ -7,8 +7,7 @@ public class MenuSprite : MonoBehaviour {
     public Sprite[] krtkusSprites;
     private System.Random rng = new System.Random();
 
-    // Start is called before the first frame update
-    void Start() {
+    void OnEnable() {
         StartCoroutine(ChangeSprite());
     }
 

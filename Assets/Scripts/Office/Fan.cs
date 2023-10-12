@@ -97,6 +97,6 @@ public class Fan : MonoBehaviour {
     IEnumerator OnFanGoTooHigh() {
         deathPanel.SetActive(true);
         yield return new WaitForSeconds(4f);
-        SceneManager.LoadScene(7);
+        SceneManager.LoadScene(9);
     }
 }

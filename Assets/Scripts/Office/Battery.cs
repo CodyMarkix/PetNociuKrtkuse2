@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.InputSystem;
 
 public class Battery : MonoBehaviour {
     [System.NonSerialized]
@@ -17,8 +18,12 @@ public class Battery : MonoBehaviour {
     public Tablet tabletScript;
     public ResLightManager camLightManager;
     public CameraLook camLookScript;
+    public PowerOutage powerOutageScript;
+    public LightMapMgr lightMapMgrScript;
 
     public Sprite[] batteryLevels;
+
+    public InputActionMap map;
     
     private int initialTime = 0;
     private float initialCharge;
@@ -27,6 +32,8 @@ public class Battery : MonoBehaviour {
     void Start() {
         initialCharge = charge;
         batteryPercentage = GetComponentInChildren<TMP_Text>();
+        map.Enable();
+        map.FindAction("losePower").performed += OnBatteryZeroBind;
     }
 
     // Update is called once per frame
@@ -42,7 +49,9 @@ public class Battery : MonoBehaviour {
                 if (charge < 192f) {
                     if (charge < 96f) {
                         if (charge == 0f) {
+                            Debug.Log("bro");
                             GetComponent<Image>().sprite = batteryLevels[4]; // Baterie je prázdná
+                            OnBatteryZero();
                         } else {
                             GetComponent<Image>().sprite = batteryLevels[3]; // Zbývá čtvrt baterie
                         }
@@ -61,7 +70,14 @@ public class Battery : MonoBehaviour {
     }
 
     void OnBatteryZero() {
-        camLookScript.DisableInput();
-        
+        camLookScript.DisableInput(1);
+        lightMapMgrScript.SwitchToDark();
+        powerOutageScript.PowerOutageAnimation();
+    }
+
+    void OnBatteryZeroBind(InputAction.CallbackContext context) {
+        if (Debug.isDebugBuild) {
+            OnBatteryZero();
+        }
     }
 }

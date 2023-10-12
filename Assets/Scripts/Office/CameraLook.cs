@@ -15,7 +15,9 @@ public class CameraLook : MonoBehaviour {
     private InputActionMap officeKeybinds;
     private InputActionMap officeMouseBinds;
 
-    private Animator anim;
+    [System.NonSerialized]
+    public Animator anim;
+    
     private bool isLookingAtDoor = false;
     
     private float mousex;
@@ -23,6 +25,7 @@ public class CameraLook : MonoBehaviour {
     private bool canTransitionMouse = true;
     private bool canToggleTablet = true;
     private bool canDoInput = true;
+    private bool canDoTablet = true;
 
     void Awake() {
         EnhancedTouchSupport.Enable();
@@ -123,7 +126,7 @@ public class CameraLook : MonoBehaviour {
     }
     
     public void SwitchTablet() {
-        if (canDoInput) {
+        if (canDoInput && canDoTablet) {
             if (!isLookingAtDoor) {
                 if (!tabletAnimator.IsInTransition(0)) {
                     if (tabletAnimator.GetBool("lookingAtTablet")) {
@@ -186,9 +189,14 @@ public class CameraLook : MonoBehaviour {
     }
 
     // For the spoops (jumpscary)
-    public void DisableInput() {
-        anim.SetInteger("Looking", 0);
-        canDoInput = false;
+    public void DisableInput(int type) {
+        if (type == 0) {
+            anim.SetInteger("Looking", 0);
+            canDoInput = false;
+        } else if (type == 1) {
+            anim.SetInteger("Looking", -1);
+            canDoTablet = false;
+        }
     }
 
 }

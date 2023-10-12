@@ -3803,6 +3803,118 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02a319e3e98b8434684694775dcfd367, type: 3}
+--- !u!1001 &653380346
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5621765456735616779, guid: bdffb7002431c574c8184c4c95d37908, type: 3}
+      propertyPath: fanScript
+      value: 
+      objectReference: {fileID: 564310042}
+    - target: {fileID: 5621765456735616779, guid: bdffb7002431c574c8184c4c95d37908, type: 3}
+      propertyPath: MainCamera
+      value: 
+      objectReference: {fileID: 193039719}
+    - target: {fileID: 5621765456735616779, guid: bdffb7002431c574c8184c4c95d37908, type: 3}
+      propertyPath: krtkusScript
+      value: 
+      objectReference: {fileID: 1205884898}
+    - target: {fileID: 5621765456735616779, guid: bdffb7002431c574c8184c4c95d37908, type: 3}
+      propertyPath: cameraLookScript
+      value: 
+      objectReference: {fileID: 193039723}
+    - target: {fileID: 5621765456735616779, guid: bdffb7002431c574c8184c4c95d37908, type: 3}
+      propertyPath: UIElements.Array.data[0]
+      value: 
+      objectReference: {fileID: 1860646211}
+    - target: {fileID: 5621765456735616779, guid: bdffb7002431c574c8184c4c95d37908, type: 3}
+      propertyPath: UIElements.Array.data[1]
+      value: 
+      objectReference: {fileID: 843965639}
+    - target: {fileID: 5621765456735616779, guid: bdffb7002431c574c8184c4c95d37908, type: 3}
+      propertyPath: UIElements.Array.data[2]
+      value: 
+      objectReference: {fileID: 607022471}
+    - target: {fileID: 5621765456735616779, guid: bdffb7002431c574c8184c4c95d37908, type: 3}
+      propertyPath: UIElements.Array.data[3]
+      value: 
+      objectReference: {fileID: 816325992}
+    - target: {fileID: 5621765456735616779, guid: bdffb7002431c574c8184c4c95d37908, type: 3}
+      propertyPath: UIElements.Array.data[4]
+      value: 
+      objectReference: {fileID: 1219536327}
+    - target: {fileID: 5621765456735616779, guid: bdffb7002431c574c8184c4c95d37908, type: 3}
+      propertyPath: UIElements.Array.data[5]
+      value: 
+      objectReference: {fileID: 1443767997}
+    - target: {fileID: 5621765456735616779, guid: bdffb7002431c574c8184c4c95d37908, type: 3}
+      propertyPath: UIElements.Array.data[6]
+      value: 
+      objectReference: {fileID: 1620422507}
+    - target: {fileID: 5621765456735616782, guid: bdffb7002431c574c8184c4c95d37908, type: 3}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5621765456735616782, guid: bdffb7002431c574c8184c4c95d37908, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.565001
+      objectReference: {fileID: 0}
+    - target: {fileID: 5621765456735616782, guid: bdffb7002431c574c8184c4c95d37908, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.887
+      objectReference: {fileID: 0}
+    - target: {fileID: 5621765456735616782, guid: bdffb7002431c574c8184c4c95d37908, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -7.247
+      objectReference: {fileID: 0}
+    - target: {fileID: 5621765456735616782, guid: bdffb7002431c574c8184c4c95d37908, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5621765456735616782, guid: bdffb7002431c574c8184c4c95d37908, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5621765456735616782, guid: bdffb7002431c574c8184c4c95d37908, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5621765456735616782, guid: bdffb7002431c574c8184c4c95d37908, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5621765456735616782, guid: bdffb7002431c574c8184c4c95d37908, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5621765456735616782, guid: bdffb7002431c574c8184c4c95d37908, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5621765456735616782, guid: bdffb7002431c574c8184c4c95d37908, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5621765456735616783, guid: bdffb7002431c574c8184c4c95d37908, type: 3}
+      propertyPath: m_Name
+      value: KrtkusEyesParent
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bdffb7002431c574c8184c4c95d37908, type: 3}
+--- !u!114 &653380347 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5621765456735616779, guid: bdffb7002431c574c8184c4c95d37908, type: 3}
+  m_PrefabInstance: {fileID: 653380346}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b8a5cd492061e4488bdd5217bd61384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &659876947
 GameObject:
   m_ObjectHideFlags: 0
@@ -4071,6 +4183,7 @@ MonoBehaviour:
   - {fileID: 1225998171}
   - {fileID: 882302554}
   playerCamera: {fileID: 193039721}
+  powerOutageScript: {fileID: 653380347}
   test: 00000000010000000200000003000000
   isShiningRight: 0
 --- !u!65 &702662953
@@ -8044,6 +8157,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b117aeb1debf99245954b42f4a5c548f, type: 3}
+--- !u!114 &1218286688 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3614138530596032386, guid: b117aeb1debf99245954b42f4a5c548f, type: 3}
+  m_PrefabInstance: {fileID: 1218286687}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c2f2ed2c96af754d97a76e5ee4368d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1219536327
 GameObject:
   m_ObjectHideFlags: 0
@@ -10363,6 +10487,7 @@ MonoBehaviour:
   - {fileID: 855206246}
   - {fileID: 1882824090}
   batteryScript: {fileID: 1443767999}
+  powerOutageScript: {fileID: 653380347}
 --- !u!65 &1352695979
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10962,13 +11087,21 @@ MonoBehaviour:
   lightScript: {fileID: 702662952}
   tabletScript: {fileID: 1302701340}
   camLightManager: {fileID: 764105221}
-  camLookScript: {fileID: 0}
+  camLookScript: {fileID: 193039723}
+  powerOutageScript: {fileID: 653380347}
+  lightMapMgrScript: {fileID: 1218286688}
   batteryLevels:
   - {fileID: 2096290239, guid: eb316d8ee9f3ecb4dae0782220b0e243, type: 3}
   - {fileID: 518879235, guid: eb316d8ee9f3ecb4dae0782220b0e243, type: 3}
   - {fileID: 1514705248, guid: eb316d8ee9f3ecb4dae0782220b0e243, type: 3}
   - {fileID: 980846966, guid: eb316d8ee9f3ecb4dae0782220b0e243, type: 3}
   - {fileID: -2091976337, guid: eb316d8ee9f3ecb4dae0782220b0e243, type: 3}
+  map:
+    m_Name: Map
+    m_Id: b701e505-68aa-484c-bd5a-c94b483814a8
+    m_Asset: {fileID: 0}
+    m_Actions: []
+    m_Bindings: []
 --- !u!222 &1443768001
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13054,6 +13187,7 @@ MonoBehaviour:
   - {fileID: 855206246}
   - {fileID: 1882824090}
   batteryScript: {fileID: 1443767999}
+  powerOutageScript: {fileID: 653380347}
 --- !u!65 &1761704911
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14693,6 +14827,7 @@ MonoBehaviour:
   - {fileID: 1225998171}
   - {fileID: 882302554}
   playerCamera: {fileID: 193039721}
+  powerOutageScript: {fileID: 653380347}
   test: 00000000010000000200000003000000
   isShiningRight: 0
 --- !u!65 &2028999216

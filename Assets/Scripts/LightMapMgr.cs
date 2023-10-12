@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 /*
-    Kód hrdě yoinknut from: https://gist.github.com/DevClicky/ce6b336b27dbfde8fa8751641405fad6
+    Kód hrdě yoinknutý z https://gist.github.com/DevClicky/ce6b336b27dbfde8fa8751641405fad6
     a lehce modifikován pro moje potřeby
 */
 
@@ -49,12 +49,12 @@ public class LightMapMgr : MonoBehaviour {
 		
 		brightLightmap = blightmap.ToArray();
 
-        map.FindAction("toggleDark").performed += SwitchToDark;
-        map.FindAction("toggleLight").performed += SwitchToLight;
+        map.FindAction("toggleDark").performed += SwitchToDarkKeybind;
+        map.FindAction("toggleLight").performed += SwitchToLightKeybind;
         map.Enable();
 	}
 
-    public void SwitchToDark(InputAction.CallbackContext context) {
+    public void SwitchToDark() {
         LightmapSettings.lightmaps = darkLightmap;
         for (int i = 0; i < lightMaterials.Length; i++) {
             lights[i].GetComponent<Renderer>().material = lightMaterials[1];
@@ -62,7 +62,7 @@ public class LightMapMgr : MonoBehaviour {
         yeeterPlushie.SetActive(false);
     }
 
-    public void SwitchToLight(InputAction.CallbackContext context) {
+    public void SwitchToLight() {
         LightmapSettings.lightmaps = brightLightmap;
         for (int i = 0; i < lightMaterials.Length; i++) {
             lights[i].GetComponent<Renderer>().material = lightMaterials[0];
@@ -70,4 +70,15 @@ public class LightMapMgr : MonoBehaviour {
         yeeterPlushie.SetActive(true);
     }
 
+    void SwitchToDarkKeybind(InputAction.CallbackContext context) {
+        if (Debug.isDebugBuild) {
+            SwitchToDark();
+        }
+    }
+
+    void SwitchToLightKeybind(InputAction.CallbackContext context) {
+        if (Debug.isDebugBuild) {
+            SwitchToLight();
+        }
+    }
 }

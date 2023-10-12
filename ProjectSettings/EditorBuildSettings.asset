@@ -27,6 +27,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Nights/Night5.unity
     guid: 84c9037a6cf558d4493bf74b8d4ac6e3
   - enabled: 1
+    path: Assets/Scenes/Nights/Night6.unity
+    guid: 4fe655c6d1614e24a828ed2582c5c406
+  - enabled: 1
+    path: Assets/Scenes/Nights/Night7.unity
+    guid: f9729c5fff02f1843b6a73cf609606bc
+  - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 109ef3fa7eea1fc429e22fe2bc807b03
   - enabled: 1

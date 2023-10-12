@@ -81,6 +81,9 @@ public class Stars : MonoBehaviour {
                     spriteArrays[arrayPtr][2].SetActive(true);
                 }
                 break;
+
+            default:
+                break;
         }
     }
 }
