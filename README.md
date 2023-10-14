@@ -17,7 +17,11 @@ Po pravé straně je sekce "Releases", kde po rozkliknutí uvidíte list všech 
 
 ![Sekce releases](./Github/releaseExample.png)
 
-Alternativně, [zde můžete přímo stáhnout nejnovější vydání!](https://github.com/CodyMarkix/PyZ-shell/releases/latest/download/PetNociuKrtkuse2.zip)
+Alternativně, zde můžete přímo stáhnout nejnovější
+- [Windows vydání](https://github.com/CodyMarkix/PyZ-shell/releases/latest/download/PetNociuKrtkuse2.zip)
+- [Linux vydání](https://github.com/CodyMarkix/PyZ-shell/releases/latest/download/PetNociuKrtkuse2.tar.gz)
+- [Android vydání](https://github.com/CodyMarkix/PyZ-shell/releases/latest/download/PetNociuKrtkuse2.apk)
+- [Github Actions (Nightly) vydání](https://github.com/CodyMarkix/PetNociuKrtkuse2/actions/workflows/main.yml)
 
 ![For Players](./Github/howPlay.png)
 
