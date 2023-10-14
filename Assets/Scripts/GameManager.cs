@@ -34,8 +34,8 @@ public class GameManager : MonoBehaviour {
                 Screen.orientation = ScreenOrientation.LandscapeLeft;
             }
             
-            if (PlayerPrefs.GetInt("night") < 5) { nightsixbutton.SetActive(false); }
-            if (PlayerPrefs.GetInt("night") < 6) { nightsevenbutton.SetActive(false); }
+            if (PlayerPrefs.GetInt("night") >= 6) { nightsixbutton.SetActive(true); }
+            if (PlayerPrefs.GetInt("night") >= 7) { nightsevenbutton.SetActive(true); }
 
             customnightmenu.SetActive(false);
         }

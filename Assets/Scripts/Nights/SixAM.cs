@@ -53,7 +53,11 @@ public class SixAM : MonoBehaviour {
 
     IEnumerator SwitchNextNight() {
         int scene = SceneManager.GetActiveScene().buildIndex;
-        int nextNight = SceneManager.GetActiveScene().buildIndex + 1;
+        int nextScene = SceneManager.GetActiveScene().buildIndex + 1;
+        int currentNight = scene - 1;
+        int nextNight = scene;
+
+        Debug.Log(string.Format("Current scene: {0}; Next scene: {1} Current night: {2}; Next night: {3}", scene, nextScene, currentNight, nextNight));
 
         StartCoroutine(SetRandomNumbers());
         yield return new WaitForSeconds(10f);
@@ -62,7 +66,7 @@ public class SixAM : MonoBehaviour {
             PlayerPrefs.SetInt("night", nextNight);
             PlayerPrefs.Save();
 
-            SceneManager.LoadScene(nextNight);
+            SceneManager.LoadScene(nextScene);
         } else if (scene == 6) {
             // Načte victory scénu
             PlayerPrefs.SetInt("night", nextNight);
@@ -72,7 +76,13 @@ public class SixAM : MonoBehaviour {
         } else if (scene == 7 || scene == 8) {
             // Načte main menu
             if (scene == 7) {
-                PlayerPrefs.SetInt("night", nextNight);
+                if (PlayerPrefs.GetInt("night") == 6) {
+                    PlayerPrefs.SetInt("night", nextNight);
+                }
+            } else if (scene == 8) {
+                if (krtkusak.AILevel == 20 && myskusak.AILevel == 20 && zajac.AILevel == 20) {
+                    PlayerPrefs.SetInt("night", scene); // Scene should be equal to 8 at that moment
+                }
             }
 
             PlayerPrefs.Save();
