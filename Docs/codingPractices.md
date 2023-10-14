@@ -6,7 +6,7 @@ Zde jsou sepsány coding practices specifické k tomuto projektu. **Jakákoliv p
 
 V projektu jsou **striktně používány 4 mezery na indentaci**. Můžete používat nástroj na automatické konvertování z tabulátoru na mezery, ale tabulátor v zdrojovém kódu nebude.
 
-## \#2 - Složené závorky po deklaracích funkce.
+## \#2 - Složené závorky po deklaracích funkce
 
 Složené závorky (curly braces) po deklaraci funkce bude vždy vedle jména. Nikdy nebude používaná závorka na novém řádku.
 
