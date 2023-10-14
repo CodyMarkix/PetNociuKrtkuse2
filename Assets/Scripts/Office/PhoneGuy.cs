@@ -7,8 +7,11 @@ public class PhoneGuy : MonoBehaviour {
     public GameObject hangUpButton;
     public float transcriptLength;
 
+    private Coroutine callPart2Routine;
+
     void Awake() {
         hangUpButton.transform.localScale = new Vector3(0f, 0f, 0f);
+        
     }
 
     void Start()
@@ -20,7 +23,7 @@ public class PhoneGuy : MonoBehaviour {
         audioFiles[0].Play();
         yield return new WaitForSeconds(3.8f);
         audioFiles[1].Play();
-        StartCoroutine(CallPart2());
+        callPart2Routine = StartCoroutine(CallPart2());
     }
 
     IEnumerator CallPart2() {
@@ -35,6 +38,7 @@ public class PhoneGuy : MonoBehaviour {
         audioFiles[2].Stop();
         audioFiles[3].Play();
         hangUpButton.SetActive(false);
+        StopCoroutine(callPart2Routine);
     }
 
 }

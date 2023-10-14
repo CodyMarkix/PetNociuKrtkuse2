@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour {
     public InputAction action;
 
     [System.NonSerialized]
-    public int night; // 0 = v main menu; 1 - 5 = noc 1 - 5
+    public int night; // 0 = v main menu; 1 - 5 = noc    1 - 5
 
     // Start is called before the first frame update
     void Start() {

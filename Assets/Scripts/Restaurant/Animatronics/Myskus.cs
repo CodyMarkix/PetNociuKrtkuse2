@@ -48,10 +48,12 @@ public class Myskus : MonoBehaviour {
     private bool canHaveOpportunity = true;
     private int currentPosIndex = 0;
     private Vector3 initialPos;
+    private Animator animator;
     System.Random rng = new System.Random();
     
     void Start() {
         StartCoroutine(giveOpportunity());
+        animator = transform.gameObject.GetComponent<Animator>();
         initialPos = restaurantPositions["stage"];
     }
 
@@ -203,10 +205,20 @@ public class Myskus : MonoBehaviour {
         }
 
         runSFX.Play();
-        transform.gameObject.GetComponent<Animator>().enabled = true;
+        animator.enabled = true;
         yield return new WaitForSeconds(1.5f);
         if (doorScript.doorIsOpen) {
+            animator.SetBool("doorIsOpen", true);
             StartCoroutine(Jumpscare());
+        } else {
+            animator.SetBool("doorIsOpen", false); // For redundancy
+            animator.enabled = false;
+            runSFX.Stop();
+
+            int newPos = 0;
+            transform.position = restaurantPositions[positionIndex[newPos]];
+            transform.eulerAngles = restaurantRotations[positionIndex[newPos]];
+            currentPosIndex = newPos;
         }
     }
 
