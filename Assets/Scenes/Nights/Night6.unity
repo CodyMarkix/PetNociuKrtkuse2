@@ -3010,6 +3010,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5306089242501701070, guid: f08d485b2376a364ca20cb7b7424c34a, type: 3}
   m_PrefabInstance: {fileID: 537305662}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &537305664 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5306089242501701069, guid: f08d485b2376a364ca20cb7b7424c34a, type: 3}
+  m_PrefabInstance: {fileID: 537305662}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &564310039 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 84a882c1f54d2d048977b22d81e9c9b0, type: 3}
@@ -3036,7 +3041,7 @@ MonoBehaviour:
   fanIcon: {fileID: 607022471}
   iconAnimator: {fileID: 607022473}
   tempValueText: {fileID: 441335910}
-  deathPanel: {fileID: 0}
+  deathPanel: {fileID: 537305664}
   selfAnimator: {fileID: 564310044}
   timeScript: {fileID: 1219536329}
   batteryScript: {fileID: 1443767999}
