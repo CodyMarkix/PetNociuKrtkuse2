@@ -254,7 +254,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: v2023.10.14.0007
+  m_text: v2023.10.14.0009
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c1526cc6551b1f7419e9e7ebfa868068, type: 2}
   m_sharedMaterial: {fileID: 1042594073513407168, guid: c1526cc6551b1f7419e9e7ebfa868068, type: 2}
@@ -413,6 +413,10 @@ PrefabInstance:
     - target: {fileID: 523584319405563126, guid: d4e62bc35ed800161a0c3d0d091169a6, type: 3}
       propertyPath: m_Name
       value: NightSix
+      objectReference: {fileID: 0}
+    - target: {fileID: 523584319405563126, guid: d4e62bc35ed800161a0c3d0d091169a6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 523584319405563126, guid: d4e62bc35ed800161a0c3d0d091169a6, type: 3}
       propertyPath: m_TagString
@@ -1981,6 +1985,10 @@ PrefabInstance:
     - target: {fileID: 523584319405563126, guid: d4e62bc35ed800161a0c3d0d091169a6, type: 3}
       propertyPath: m_Name
       value: NightSeven
+      objectReference: {fileID: 0}
+    - target: {fileID: 523584319405563126, guid: d4e62bc35ed800161a0c3d0d091169a6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 523584319405563126, guid: d4e62bc35ed800161a0c3d0d091169a6, type: 3}
       propertyPath: m_TagString
