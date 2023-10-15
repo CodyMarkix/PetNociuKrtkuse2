@@ -26,6 +26,7 @@ public class Fan : MonoBehaviour {
     private bool isOn = true;
     private AudioSource fanAudio;
     private float heatTransparency = 0f;
+    private int canIncreaseTemp = 0;
 
     public int getTemperature() {
         return _temperature;
@@ -50,11 +51,21 @@ public class Fan : MonoBehaviour {
             initialTime = timeScript.time;
             if (isOn) {
                 if (getTemperature() > 20) {
-                    setTemperature(getTemperature() - 1);
+                    if (canIncreaseTemp == 0) {
+                        canIncreaseTemp++;
+                    } else {
+                        setTemperature(getTemperature() - 1);
+                        canIncreaseTemp = 0;
+                    }
                 }
             } else {
-                if (getTemperature() < 48) {
-                    setTemperature(getTemperature() + 1);
+                if (getTemperature() < 44) {
+                    if (canIncreaseTemp == 0) {
+                        canIncreaseTemp++;
+                    } else {
+                        setTemperature(getTemperature() + 1);
+                        canIncreaseTemp = 0;
+                    }
                 } else {
                     StartCoroutine(OnFanGoTooHigh());
                 }

@@ -5,7 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class ContinueGame : MonoBehaviour {
     public void OnButtonPress() {
-        SceneManager.LoadScene(PlayerPrefs.GetInt("night") + 1);
-        Debug.Log(PlayerPrefs.GetInt("night"));
+        if (PlayerPrefs.GetInt("night") <= 5) {
+            SceneManager.LoadScene(PlayerPrefs.GetInt("night") + 1);
+            Debug.Log(PlayerPrefs.GetInt("night"));
+        } else {
+            SceneManager.LoadScene(6); // Night 5 scene
+        }
     }
 }

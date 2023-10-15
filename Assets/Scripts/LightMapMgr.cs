@@ -52,6 +52,8 @@ public class LightMapMgr : MonoBehaviour {
         map.FindAction("toggleDark").performed += SwitchToDarkKeybind;
         map.FindAction("toggleLight").performed += SwitchToLightKeybind;
         map.Enable();
+
+        SwitchToLight();
 	}
 
     public void SwitchToDark() {
