@@ -29,15 +29,17 @@ Alternativně, zde můžete přímo stáhnout nejnovější
 
 (Podle české ISO klávesnice)
 
+- Esc = Exit
 - A/D/Myš = pohyb kamerou
 - S/Pohyb myší dolů = Zapnutí/Vypnutí tabletu
-- Z = Zapnutí/Vypnutí větráku
+- Mezerník v tabletě = Toggle světla
+- Y = Zapnutí/Vypnutí větráku
 
 ### Gameplay
 
 Stejně jako v originálním FNAFku je 7 nocí. Pět standardních, šestá noc a vlastní noc. Zároveň tu ale přichází v potaz gameplay element inspirovaný z FNAF 6. Tímž je větrák!
 
-Základní teplota je 20° C. Bohužel větrák ale konzumuje hodně energie. Naštěstí je možné ho vypnout. Dávejte si ale bacha, protože při 48° C padnete!
+Základní teplota je 20° C. Bohužel větrák ale konzumuje hodně energie. Naštěstí je možné ho vypnout. Dávejte si ale bacha, protože při 44° C padnete!
 
 ![For Devs](./Github/forDevelopers.png)
 

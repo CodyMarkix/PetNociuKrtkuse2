@@ -27,6 +27,7 @@ public class Battery : MonoBehaviour {
     
     private int initialTime = 0;
     private float initialCharge;
+    private bool isDed = false; // Why is the heavy dead?!
     private TMP_Text batteryPercentage;
 
     void Start() {
@@ -48,10 +49,13 @@ public class Battery : MonoBehaviour {
             if (charge < 288f) {
                 if (charge < 192f) {
                     if (charge < 96f) {
-                        if (charge == 0f) {
-                            Debug.Log("bro");
-                            GetComponent<Image>().sprite = batteryLevels[4]; // Baterie je prázdná
-                            OnBatteryZero();
+                        if (charge <= 0f) {
+                            if (!isDed) {
+                                Debug.Log("bro");
+                                GetComponent<Image>().sprite = batteryLevels[4]; // Baterie je prázdná
+                                OnBatteryZero();
+                                isDed = true;
+                            }
                         } else {
                             GetComponent<Image>().sprite = batteryLevels[3]; // Zbývá čtvrt baterie
                         }

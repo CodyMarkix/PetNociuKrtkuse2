@@ -10,7 +10,7 @@ public class Zajic : MonoBehaviour {
         { "podium", new Vector3(2.87f, 1.346f, 17.79f) },
         { "mainArea", new Vector3(5.816f, 0.953f, 10.589f) },
         { "restroom", new Vector3(13.718f, 0.953f, 13.676f) },
-        { "kitchen", new Vector3(19.29f, 10.6f, -19.29f) },
+        { "kitchen", new Vector3(6.58f, 1.58f, 3.03f) },
         { "hallwayTop", new Vector3(-5.622f, 0.953f, 1.71f) },
         { "hallwayCorner", new Vector3(-6.276f, 0.953f, -10.681f) },
         { "door", new Vector3(-5.78f, 0.953f, -7.36f) }
@@ -45,6 +45,7 @@ public class Zajic : MonoBehaviour {
     public DoorButton doorScript;
     public GameTime gameTimeScript;
     public GameObject realtimeLight;
+    public AudioSource kitchenSounds;
 
     private bool movementOpportunity = false;
     private bool canHaveOpportunity = true;
@@ -52,12 +53,30 @@ public class Zajic : MonoBehaviour {
     private int lockAfterDoorAttempt = 0;
     private int opportunitiesInKitchen;
     private Vector3 initialPos;
+    private bool isPlayingKitchenSounds = false;
     System.Random rng = new System.Random();
     
     void Start() {
         StartCoroutine(giveOpportunity());
         initialPos = restaurantPositions["podium"];
         opportunitiesInKitchen = 2 * gameTimeScript.currentNight;
+    }
+
+    void Update() {
+        int initTime = 0;
+        if (gameTimeScript.time != initTime) {
+            if (currentPosIndex == 3) {
+                kitchenSounds.loop = true;
+                kitchenSounds.Play();
+            } else {
+                if (kitchenSounds.isPlaying) {
+                    kitchenSounds.loop = false;
+                    kitchenSounds.Stop();
+                }
+            }
+
+            initTime = gameTimeScript.time;
+        }
     }
 
     int getMovementPositon() {
@@ -178,7 +197,7 @@ public class Zajic : MonoBehaviour {
         while (true) {
             yield return new WaitForSeconds(4);
 
-            if (fanScript.getTemperature() > 28) {
+            if (fanScript.getTemperature() > 24) {
                 if (lockAfterDoorAttempt > 0) {
                     if (canHaveOpportunity ) {
                         canHaveOpportunity = false;
