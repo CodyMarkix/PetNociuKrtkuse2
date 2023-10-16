@@ -200,7 +200,7 @@ public class Myskus : MonoBehaviour {
                 camButtonsScript.ToggleCamButtons("Cam1A");
                 tabletScript.currentCam = "Cam1A";
                 camButtonsScript.camToggleSFX.Play();
-                tabletScript.Cam1B();
+                tabletScript.Cam1A();
             }
         }
 
