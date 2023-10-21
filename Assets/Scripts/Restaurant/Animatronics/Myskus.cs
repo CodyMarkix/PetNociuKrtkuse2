@@ -152,14 +152,14 @@ public class Myskus : MonoBehaviour {
     IEnumerator giveOpportunity() {
         while (true) {
             yield return new WaitForSeconds(4);
-            Debug.Log(string.Format("AI Level: {0}", AILevel));
+            // Debug.Log(string.Format("AI Level: {0}", AILevel));
 
                 if (canHaveOpportunity) {
                     if (!tabletScript.isLooking) {
                         canHaveOpportunity = false;
                         movementOpportunity = true;
                         
-                        Debug.Log(string.Format("{0} with AI Level {1} can have an opportunity.", transform.gameObject.name, AILevel));
+                        // Debug.Log(string.Format("{0} with AI Level {1} can have an opportunity.", transform.gameObject.name, AILevel));
                         MoveAnimatronic();
 
                         canHaveOpportunity = true;
@@ -175,7 +175,7 @@ public class Myskus : MonoBehaviour {
         int randomValue = rng.Next(1, 20);
         if (AILevel >= randomValue) {
             if (currentPosIndex != positionIndex.Count - 1) { // Is the animatronic ready to jumpscar?
-                Debug.Log(string.Format("{0} with AI Level {1} has moved.", transform.gameObject.name, AILevel));
+                // Debug.Log(string.Format("{0} with AI Level {1} has moved.", transform.gameObject.name, AILevel));
                 int newPos = currentPosIndex + rng.Next(1, 2);
                 transform.position = restaurantPositions[positionIndex[newPos]];
                 transform.eulerAngles = restaurantRotations[positionIndex[newPos]];

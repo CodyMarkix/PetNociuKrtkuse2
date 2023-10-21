@@ -175,7 +175,7 @@ public class Krtkus : MonoBehaviour {
                 canHaveOpportunity = false;
                 movementOpportunity = true;
 
-                Debug.Log(string.Format("{0} with AI Level {1} can have an opportunity.", transform.gameObject.name, AILevel));
+                // Debug.Log(string.Format("{0} with AI Level {1} can have an opportunity.", transform.gameObject.name, AILevel));
                 MoveAnimatronic();
 
                 movementOpportunity = false;
@@ -191,7 +191,7 @@ public class Krtkus : MonoBehaviour {
         if (AILevel >= randomValue) {
             if (currentPosIndex != positionIndex.Count - 1) { // Is the animatronic in a door?
                 // If not, move it to another position
-                Debug.Log(string.Format("{0} with AI Level {1} has moved.", transform.gameObject.name, AILevel));
+                // Debug.Log(string.Format("{0} with AI Level {1} has moved.", transform.gameObject.name, AILevel));
                 int newPos = currentPosIndex + rng.Next(1, 2);
                 transform.position = restaurantPositions[positionIndex[newPos]];
                 transform.eulerAngles = restaurantRotations[positionIndex[newPos]];
@@ -203,7 +203,7 @@ public class Krtkus : MonoBehaviour {
                         StartCoroutine(Jumpscare());
                     }
                 } else {
-                    Debug.Log(string.Format("{0} with AI Level {1} has moved.", transform.gameObject.name, AILevel));
+                    // Debug.Log(string.Format("{0} with AI Level {1} has moved.", transform.gameObject.name, AILevel));
                     int newPos = currentPosIndex - rng.Next(1, 2);
                     transform.position = restaurantPositions[positionIndex[newPos]];
                     transform.eulerAngles = restaurantRotations[positionIndex[newPos]];

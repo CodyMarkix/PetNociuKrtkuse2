@@ -32,7 +32,7 @@ public class SixAM : MonoBehaviour {
             alphabet.Add("" + i);
         }
 
-        Debug.Log(SceneManager.GetActiveScene().buildIndex);
+        // Debug.Log(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void EndNightKeybind(InputAction.CallbackContext context) {
@@ -57,7 +57,7 @@ public class SixAM : MonoBehaviour {
         int currentNight = scene - 1;
         int nextNight = scene;
 
-        Debug.Log(string.Format("Current scene: {0}; Next scene: {1} Current night: {2}; Next night: {3}", scene, nextScene, currentNight, nextNight));
+        // Debug.Log(string.Format("Current scene: {0}; Next scene: {1} Current night: {2}; Next night: {3}", scene, nextScene, currentNight, nextNight));
 
         StartCoroutine(SetRandomNumbers());
         yield return new WaitForSeconds(10f);

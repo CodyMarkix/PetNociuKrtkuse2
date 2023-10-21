@@ -203,7 +203,7 @@ public class Zajic : MonoBehaviour {
                         canHaveOpportunity = false;
                         movementOpportunity = true;
 
-                        Debug.Log(string.Format("{0} with AI Level {1} can have an opportunity.", transform.gameObject.name, AILevel));
+                        // Debug.Log(string.Format("{0} with AI Level {1} can have an opportunity.", transform.gameObject.name, AILevel));
                         MoveAnimatronic();
                     }
                 } else {
@@ -226,7 +226,7 @@ public class Zajic : MonoBehaviour {
                         opportunitiesInKitchen--;
                     }
                 } else {
-                    Debug.Log(string.Format("{0} with AI Level {1} has moved.", transform.gameObject.name, AILevel));
+                    // Debug.Log(string.Format("{0} with AI Level {1} has moved.", transform.gameObject.name, AILevel));
                     int newPos = currentPosIndex + rng.Next(1, 2);
                     transform.position = restaurantPositions[positionIndex[newPos]];
                     transform.eulerAngles = restaurantRotations[positionIndex[newPos]];
@@ -238,7 +238,7 @@ public class Zajic : MonoBehaviour {
                         StartCoroutine(Jumpscare());
                     }
                 } else {
-                    Debug.Log(string.Format("{0} with AI Level {1} has moved.", transform.gameObject.name, AILevel));
+                    // Debug.Log(string.Format("{0} with AI Level {1} has moved.", transform.gameObject.name, AILevel));
                     int newPos = currentPosIndex - rng.Next(1, 2);
                     transform.position = restaurantPositions[positionIndex[newPos]];
                     transform.eulerAngles = restaurantRotations[positionIndex[newPos]];

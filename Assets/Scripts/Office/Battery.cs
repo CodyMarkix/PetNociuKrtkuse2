@@ -40,10 +40,6 @@ public class Battery : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         if (initialTime != timeScript.time) {
-            if (lightScript.isShiningLeft || lightScript.isShiningRight || camLightManager.hasToggledLights) {
-                dischargeFloat = 1f;
-            }
-
             charge = charge - dischargeFloat;
 
             if (charge < 288f) {
@@ -51,7 +47,6 @@ public class Battery : MonoBehaviour {
                     if (charge < 96f) {
                         if (charge <= 0f) {
                             if (!isDed) {
-                                Debug.Log("bro");
                                 GetComponent<Image>().sprite = batteryLevels[4]; // Baterie je prázdná
                                 OnBatteryZero();
                                 isDed = true;
@@ -68,6 +63,7 @@ public class Battery : MonoBehaviour {
             }
 
             batteryPercentage.text = string.Format("{0}%", Mathf.FloorToInt((charge / initialCharge) * 100));
+            Debug.Log(string.Format("Charge: {0}; Discharge Float: {1}", charge, dischargeFloat));
 
             initialTime = timeScript.time;
         }

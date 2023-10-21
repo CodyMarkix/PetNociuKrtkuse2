@@ -59,7 +59,7 @@ public class Fan : MonoBehaviour {
                     }
                 }
             } else {
-                if (getTemperature() < 44) {
+                if (getTemperature() < 48) {
                     if (canIncreaseTemp == 0) {
                         canIncreaseTemp++;
                     } else {
