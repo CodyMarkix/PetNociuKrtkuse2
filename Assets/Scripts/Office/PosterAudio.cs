@@ -7,6 +7,9 @@ public class PosterAudio : MonoBehaviour {
     public AudioSource flakanec;
     public AudioSource ozralej;
 
+    [Header("External Scripts")]
+    public Tablet tabletScript;
+
     private System.Random rng;
 
     void Awake() {
@@ -14,13 +17,15 @@ public class PosterAudio : MonoBehaviour {
     }
 
     void OnMouseDown() {
-        int randNum = rng.Next(0, 10);
-        Debug.Log(randNum);
+        if (!tabletScript.isLooking) {
+            int randNum = rng.Next(0, 10);
+            Debug.Log(randNum);
 
-        if (randNum >= 5) {
-            flakanec.Play();
-        } else {
-            ozralej.Play();
+            if (randNum >= 5) {
+                flakanec.Play();
+            } else {
+                ozralej.Play();
+            }
         }
     }
 }

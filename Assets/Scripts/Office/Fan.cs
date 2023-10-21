@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Fan : MonoBehaviour {
     [Header("Input")]
@@ -13,6 +14,7 @@ public class Fan : MonoBehaviour {
     public Animator iconAnimator;
     public GameObject tempValueText;
     public GameObject deathPanel;
+    public GameObject heatPanel;
 
     [Header("Animation")]
     public Animator selfAnimator;
@@ -27,6 +29,7 @@ public class Fan : MonoBehaviour {
     private AudioSource fanAudio;
     private float heatTransparency = 0f;
     private int canIncreaseTemp = 0;
+    private int alphaChannelMultiplier = 1;
 
     public int getTemperature() {
         return _temperature;
@@ -55,6 +58,10 @@ public class Fan : MonoBehaviour {
                         canIncreaseTemp++;
                     } else {
                         setTemperature(getTemperature() - 1);
+                        if (getTemperature() > 35) {
+                            SetAlphaChannel(0.025f * alphaChannelMultiplier, heatPanel.GetComponent<Image>());
+                            alphaChannelMultiplier--;
+                        }
                         canIncreaseTemp = 0;
                     }
                 }
@@ -64,6 +71,10 @@ public class Fan : MonoBehaviour {
                         canIncreaseTemp++;
                     } else {
                         setTemperature(getTemperature() + 1);
+                        if (getTemperature() > 35) {
+                            SetAlphaChannel(0.025f * alphaChannelMultiplier, heatPanel.GetComponent<Image>());
+                            alphaChannelMultiplier++;
+                        }
                         canIncreaseTemp = 0;
                     }
                 } else {
@@ -109,5 +120,11 @@ public class Fan : MonoBehaviour {
         deathPanel.SetActive(true);
         yield return new WaitForSeconds(4f);
         SceneManager.LoadScene(9);
+    }
+
+    void SetAlphaChannel(float alpha, Image img) {
+        Color newColor = img.color;
+        newColor.a = alpha;
+        img.color = newColor;
     }
 }
