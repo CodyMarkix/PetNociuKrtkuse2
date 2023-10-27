@@ -18,8 +18,8 @@ Po pravé straně je sekce "Releases", kde po rozkliknutí uvidíte list všech 
 ![Sekce releases](./Github/releaseExample.png)
 
 Alternativně, zde můžete přímo stáhnout nejnovější
-- [Windows vydání (64-bit)](https://github.com/CodyMarkix/PyZ-shell/releases/latest/download/PetNociuKrtkuse2-x64.zip)
-- [Linux vydání (64-bit)](https://github.com/CodyMarkix/PyZ-shell/releases/latest/download/PetNociuKrtkuse2-x64.tar.gz)
+- [Windows vydání (64-bit)](https://github.com/CodyMarkix/PetNociuKrtkuse2/releases/latest/download/PetNociuKrtkuse2-x64.zip)
+- [Linux vydání (64-bit)](https://github.com/CodyMarkix/PetNociuKrtkuse2/releases/latest/download/PetNociuKrtkuse2-x64.tar.gz)
 - Android vydání - prozatím nedostupné!
 - [Github Actions (Nightly) vydání](https://github.com/CodyMarkix/PetNociuKrtkuse2/actions/workflows/main.yml)
 
