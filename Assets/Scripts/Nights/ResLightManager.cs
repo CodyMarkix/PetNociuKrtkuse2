@@ -41,61 +41,61 @@ public class ResLightManager : MonoBehaviour {
             case "Cam1A":
                 lights[0].SetActive(true);
                 hasToggledLights = true;
-                batteryScript.dischargeFloat = batteryScript.dischargeFloat + 0.6f;
+                batteryScript.dischargeFloat = batteryScript.dischargeFloat + 750f; // 0.6f
                 break;
 
             case "Cam1B":
                 lights[1].SetActive(true);
                 hasToggledLights = true;
-                batteryScript.dischargeFloat = batteryScript.dischargeFloat + 0.6f;
+                batteryScript.dischargeFloat = batteryScript.dischargeFloat + 750f; // 0.6f
                 break;
 
             case "Cam2A":
                 lights[2].SetActive(true);
                 hasToggledLights = true;
-                batteryScript.dischargeFloat = batteryScript.dischargeFloat + 0.6f;
+                batteryScript.dischargeFloat = batteryScript.dischargeFloat + 750f; // 0.6f
                 break;
 
             case "Cam2B":
                 lights[3].SetActive(true);
                 hasToggledLights = true;
-                batteryScript.dischargeFloat = batteryScript.dischargeFloat + 0.6f;
+                batteryScript.dischargeFloat = batteryScript.dischargeFloat + 750f; // 0.6f
                 break;
 
             case "Cam3A":
                 lights[4].SetActive(true);
                 hasToggledLights = true;
-                batteryScript.dischargeFloat = batteryScript.dischargeFloat + 0.6f;
+                batteryScript.dischargeFloat = batteryScript.dischargeFloat + 750f; // 0.6f
                 break;
 
             case "Cam4A":
                 lights[5].SetActive(true);
                 hasToggledLights = true;
-                batteryScript.dischargeFloat = batteryScript.dischargeFloat + 0.6f;
+                batteryScript.dischargeFloat = batteryScript.dischargeFloat + 750f; // 0.6f
                 break;
 
             case "Cam5A":
                 lights[6].SetActive(true);
                 hasToggledLights = true;
-                batteryScript.dischargeFloat = batteryScript.dischargeFloat + 0.6f;
+                batteryScript.dischargeFloat = batteryScript.dischargeFloat + 750f; // 0.6f
                 break;
 
             case "Cam5B":
                 lights[7].SetActive(true);
                 hasToggledLights = true;
-                batteryScript.dischargeFloat = batteryScript.dischargeFloat + 0.6f;
+                batteryScript.dischargeFloat = batteryScript.dischargeFloat + 750f; // 0.6f
                 break;
 
             case "Cam6A":
                 lights[8].SetActive(true);
                 hasToggledLights = true;
-                batteryScript.dischargeFloat = batteryScript.dischargeFloat + 0.6f;
+                batteryScript.dischargeFloat = batteryScript.dischargeFloat + 750f; // 0.6f
                 break;
         }
     }
 
     void DisableLight(InputAction.CallbackContext context) {
-        batteryScript.dischargeFloat = batteryScript.dischargeFloat - 0.6f;
+        batteryScript.dischargeFloat = batteryScript.dischargeFloat - 750f; // 0.6f
         hasToggledLights = false;
         foreach (GameObject x in lights) {
             x.SetActive(false);

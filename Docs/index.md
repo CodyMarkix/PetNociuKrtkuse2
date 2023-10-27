@@ -1,6 +1,7 @@
 # Dokumentace pro vývojáře
 
 ### Obsah:
-- [buildingKrtkus.md](./buildingKrtkus.md)
-- [codingPractices.md](./codingPractices.md)
-- [fileStructure.md](./fileStructure.md)
+- [Stavění Krtkuse](./buildingKrtkus.md)
+- [Programovací etiketa](./codingPractices.md)
+- [Struktura souborů](./fileStructure.md)
+- [Pro Github přispěvatele](./forGithubContributors.md)

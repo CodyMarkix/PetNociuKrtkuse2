@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using UnityEngine;
 using UnityEditor;
+using System.IO;
 
 #if UNITY_EDITOR
 public class BuildScript : MonoBehaviour {
@@ -12,11 +13,32 @@ public class BuildScript : MonoBehaviour {
         target = BuildTarget.StandaloneWindows
     };
 
+    [MenuItem("Build/Create Build Folders")]
+    public static void CreateFolders() {
+        string path = SetBuildPath();
+        string[] pathNames = {"Windows32", "Windows64", "OSXIntel", "Linux64", "Android"};
+
+        foreach (string name in pathNames) {
+            if (!Directory.Exists(path + "/" + name)) {
+                Directory.CreateDirectory(path + "/" + name);
+            }
+        }
+
+    }
+
+    [MenuItem("Build/Open Build Folder")]
+    public static void OpenBuildFolder() {
+        UnityEngine.Debug.Log(Application.dataPath);
+        Process explorer = new Process();
+        explorer.StartInfo.FileName = Application.dataPath + "/../Build";
+        explorer.Start();
+    }
+
     // Build 32-bit Windows version
     [MenuItem("Build/Windows/Build Windows 32")]
     public static void BuildWindows32() {
         string path = SetBuildPath();
-        System.IO.Directory.CreateDirectory(path + "/Windows32");
+        if (!Directory.Exists(path + "/Windows32")) {Directory.CreateDirectory(path + "/Windows32");}
 
         buildOptions.locationPathName = string.Format("{0}/Windows32/Pet Noci u Krtkuse.exe", path);
         buildOptions.target = BuildTarget.StandaloneWindows;
@@ -28,7 +50,7 @@ public class BuildScript : MonoBehaviour {
     [MenuItem("Build/Windows/Build Windows 64")]
     public static void BuildWindows64() {
         string path = SetBuildPath();
-        System.IO.Directory.CreateDirectory(path + "/Windows64");
+        if (!Directory.Exists(path + "/Windows64")) {Directory.CreateDirectory(path + "/Windows64");}
 
         buildOptions.locationPathName = string.Format("{0}/Windows64/Pet Noci u Krtkuse.exe", path);
         buildOptions.target = BuildTarget.StandaloneWindows64;
@@ -40,7 +62,7 @@ public class BuildScript : MonoBehaviour {
     [MenuItem("Build/OSX/Build OSX Intel")]
     public static void BuildOSXIntel() {
         string path = SetBuildPath();
-        System.IO.Directory.CreateDirectory(path + "/OSXIntel");
+        if (!Directory.Exists(path + "/OSXIntel")) {Directory.CreateDirectory(path + "/OSXIntel");}
 
         buildOptions.locationPathName = string.Format("{0}/OSXIntel/Pet Noci u Krtkuse", path);
         buildOptions.target = BuildTarget.StandaloneOSX;
@@ -52,7 +74,7 @@ public class BuildScript : MonoBehaviour {
     [MenuItem("Build/Linux/Build Linux 64")]
     public static void BuildLinux64() {
         string path = SetBuildPath();
-        System.IO.Directory.CreateDirectory(path + "/Linux64");
+        if (Directory.Exists(path + "/Linux64")) {Directory.CreateDirectory(path + "/Linux64");}
 
         buildOptions.locationPathName = string.Format("{0}/Linux32/Pet Noci u Krtkuse.x86_64", path);
         buildOptions.target = BuildTarget.StandaloneLinux64;
@@ -64,7 +86,7 @@ public class BuildScript : MonoBehaviour {
     [MenuItem("Build/Android/Build Android")]
     public static void BuildAndroid() {
         string path = SetBuildPath();
-        System.IO.Directory.CreateDirectory(path + "/Android");
+        if (Directory.Exists(path + "/Android")) {Directory.CreateDirectory(path + "/Android");}
 
         buildOptions.locationPathName = string.Format("{0}/Linux32/Pet Noci u Krtkuse.apk", path);
         buildOptions.target = BuildTarget.Android;

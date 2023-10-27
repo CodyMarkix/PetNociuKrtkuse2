@@ -25,7 +25,7 @@ public class LightButton : MonoBehaviour {
         mousey = Mouse.current.position.y.ReadValue();
     }
 
-    void OnMouseDrag() {
+    void OnMouseDown() {
         toggleLightsOn();
     }
 
@@ -38,13 +38,13 @@ public class LightButton : MonoBehaviour {
             switch(gameObject.tag) {
                 case "DoorButtonLeft":
                     hallwaylights[0].GetComponent<Light>().enabled = true;
-                    batteryScript.dischargeFloat = batteryScript.dischargeFloat + 0.6f;
+                    batteryScript.dischargeFloat = batteryScript.dischargeFloat + 625f; // 0.5f
                     isShiningLeft = true;
                     break;
 
                 case "DoorButtonRight":
                     hallwaylights[1].GetComponent<Light>().enabled = true;
-                    batteryScript.dischargeFloat = batteryScript.dischargeFloat + 0.5f;
+                    batteryScript.dischargeFloat = batteryScript.dischargeFloat + 625f; // 0.5f
                     isShiningRight = true;
                     break;
 
@@ -63,13 +63,13 @@ public class LightButton : MonoBehaviour {
             switch(gameObject.tag) {
                 case "DoorButtonLeft":
                     hallwaylights[0].GetComponent<Light>().enabled = false;
-                    batteryScript.dischargeFloat = batteryScript.dischargeFloat - 0.5f;
+                    batteryScript.dischargeFloat = batteryScript.dischargeFloat - 625f; // 0.5f
                     isShiningLeft = true;
                     break;
 
                 case "DoorButtonRight":
                     hallwaylights[1].GetComponent<Light>().enabled = false;
-                    batteryScript.dischargeFloat = batteryScript.dischargeFloat - 1f;
+                    batteryScript.dischargeFloat = batteryScript.dischargeFloat - 625f; // 0.5f
                     isShiningRight = true;
                     break;
 

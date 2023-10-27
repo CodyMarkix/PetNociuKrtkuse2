@@ -433,9 +433,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '-YeeterCZ
+  m_text: '- YeeterCZ
 
-    - Kajdavid'
+    - Kajdavid
+
+    - OpravduNikdo'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c1526cc6551b1f7419e9e7ebfa868068, type: 2}
   m_sharedMaterial: {fileID: 1042594073513407168, guid: c1526cc6551b1f7419e9e7ebfa868068, type: 2}
@@ -6560,8 +6562,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: -371.6}
-  m_SizeDelta: {x: 794.57, y: 218.03}
+  m_AnchoredPosition: {x: 0, y: -394}
+  m_SizeDelta: {x: 794.57, y: 173.24}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2078215902
 MonoBehaviour:

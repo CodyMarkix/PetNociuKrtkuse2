@@ -32,7 +32,6 @@ public class SixAM : MonoBehaviour {
             alphabet.Add("" + i);
         }
 
-        // Debug.Log(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void EndNightKeybind(InputAction.CallbackContext context) {

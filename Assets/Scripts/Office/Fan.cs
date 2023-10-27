@@ -22,10 +22,12 @@ public class Fan : MonoBehaviour {
     [Header("Scripts")]
     public GameTime timeScript;
     public Battery batteryScript;
+    
+    [System.NonSerialized]
+    public bool isOn = true;
 
     private int initialTime = 0;
     private int _temperature = 20;
-    private bool isOn = true;
     private AudioSource fanAudio;
     private float heatTransparency = 0f;
     private int canIncreaseTemp = 0;
@@ -61,6 +63,8 @@ public class Fan : MonoBehaviour {
                         if (getTemperature() > 35) {
                             SetAlphaChannel(0.025f * alphaChannelMultiplier, heatPanel.GetComponent<Image>());
                             alphaChannelMultiplier--;
+                        } else if (getTemperature() == 35) {
+                            SetAlphaChannel(0f, heatPanel.GetComponent<Image>());
                         }
                         canIncreaseTemp = 0;
                     }
@@ -104,14 +108,16 @@ public class Fan : MonoBehaviour {
             fanAudio.Stop();
             iconAnimator.SetBool("disabledFan", true);
             selfAnimator.SetBool("fanIsOn", false);
-            batteryScript.dischargeFloat = batteryScript.dischargeFloat - 0.5f;
+            // batteryScript.dischargeFloat = batteryScript.dischargeFloat - 0.8f;
+            batteryScript.dischargeFloat = batteryScript.dischargeFloat - 612f;
             isOn = !isOn;
         } else {
             // fadeInFan();
             fanAudio.Play();
             iconAnimator.SetBool("disabledFan", false);
             selfAnimator.SetBool("fanIsOn", true);
-            batteryScript.dischargeFloat = batteryScript.dischargeFloat + 0.5f;
+            // batteryScript.dischargeFloat = batteryScript.dischargeFloat + 0.8f;
+            batteryScript.dischargeFloat = batteryScript.dischargeFloat + 612f;
             isOn = !isOn;
         }
     }

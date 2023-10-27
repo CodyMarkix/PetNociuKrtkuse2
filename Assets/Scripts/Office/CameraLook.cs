@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.EnhancedTouch;
+using UnityEditor;
 
 using ETouch = UnityEngine.InputSystem.EnhancedTouch.Touch;
 
@@ -82,45 +83,47 @@ public class CameraLook : MonoBehaviour {
     }
 
     void SwitchView(string whereToLook) {
-        if (canDoInput) {
-            switch (whereToLook) {
-                case "left":
-                    if (!anim.IsInTransition(0)) {
-                        switch (anim.GetInteger("Looking")) {
-                            case -1:
-                                break;
-                            
-                            case 0:
-                                isLookingAtDoor = true;
-                                anim.SetInteger("Looking", -1);
-                                break;
-                            
-                            case 1:
-                                isLookingAtDoor = false;
-                                anim.SetInteger("Looking", 0);
-                                break;
-                        }
-                    }
-                    break;
-            
-                case "right":
-                    if (!anim.IsInTransition(0)) {
+        if (!tabletScript.isLooking){
+            if (canDoInput) {
+                switch (whereToLook) {
+                    case "left":
+                        if (!anim.IsInTransition(0)) {
                             switch (anim.GetInteger("Looking")) {
                                 case -1:
-                                    isLookingAtDoor = false;
-                                    anim.SetInteger("Looking", 0);
                                     break;
                                 
                                 case 0:
                                     isLookingAtDoor = true;
-                                    anim.SetInteger("Looking", 1);
+                                    anim.SetInteger("Looking", -1);
                                     break;
                                 
                                 case 1:
+                                    isLookingAtDoor = false;
+                                    anim.SetInteger("Looking", 0);
                                     break;
                             }
-                    }
-                    break;
+                        }
+                        break;
+                
+                    case "right":
+                        if (!anim.IsInTransition(0)) {
+                                switch (anim.GetInteger("Looking")) {
+                                    case -1:
+                                        isLookingAtDoor = false;
+                                        anim.SetInteger("Looking", 0);
+                                        break;
+                                    
+                                    case 0:
+                                        isLookingAtDoor = true;
+                                        anim.SetInteger("Looking", 1);
+                                        break;
+                                    
+                                    case 1:
+                                        break;
+                                }
+                        }
+                        break;
+                }
             }
         }
     }
