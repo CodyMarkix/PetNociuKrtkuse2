@@ -52,25 +52,25 @@ public class Stars : MonoBehaviour {
         }
 
         switch (PlayerPrefs.GetInt("night")) {
-            case 5:
-                if (PlayerPrefs.GetInt("badStars") == 1) {
-                    spriteArrays[arrayPtr][0].SetActive(true);
-                } else {
-                    spriteArrays[arrayPtr][0].SetActive(true);
-                }
-                break;
-
             case 6:
                 if (PlayerPrefs.GetInt("badStars") == 1) {
                     spriteArrays[arrayPtr][0].SetActive(true);
-                    spriteArrays[arrayPtr][1].SetActive(true);
                 } else {
                     spriteArrays[arrayPtr][0].SetActive(true);
-                    spriteArrays[arrayPtr][1].SetActive(true);
                 }
                 break;
 
             case 7:
+                if (PlayerPrefs.GetInt("badStars") == 1) {
+                    spriteArrays[arrayPtr][0].SetActive(true);
+                    spriteArrays[arrayPtr][1].SetActive(true);
+                } else {
+                    spriteArrays[arrayPtr][0].SetActive(true);
+                    spriteArrays[arrayPtr][1].SetActive(true);
+                }
+                break;
+
+            case 8:
                 if (PlayerPrefs.GetInt("badStars") == 1) {
                     spriteArrays[arrayPtr][0].SetActive(true);
                     spriteArrays[arrayPtr][1].SetActive(true);

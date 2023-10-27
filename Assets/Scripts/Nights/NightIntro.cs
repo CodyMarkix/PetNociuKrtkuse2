@@ -18,7 +18,6 @@ public class NightIntro : MonoBehaviour {
     void Start() {
         nightToShow = SceneManager.GetActiveScene().buildIndex - 1;        
         nightText.text = string.Format("Noc {0}\n12:00 AM", nightToShow);
-        Debug.Log(SceneManager.GetActiveScene().buildIndex);
         StartCoroutine(showAnimation());
     }
 

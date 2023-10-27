@@ -152,14 +152,14 @@ public class Myskus : MonoBehaviour {
     IEnumerator giveOpportunity() {
         while (true) {
             yield return new WaitForSeconds(4);
-            Debug.Log(string.Format("AI Level: {0}", AILevel));
+            // Debug.Log(string.Format("AI Level: {0}", AILevel));
 
                 if (canHaveOpportunity) {
                     if (!tabletScript.isLooking) {
                         canHaveOpportunity = false;
                         movementOpportunity = true;
                         
-                        Debug.Log(string.Format("{0} with AI Level {1} can have an opportunity.", transform.gameObject.name, AILevel));
+                        // Debug.Log(string.Format("{0} with AI Level {1} can have an opportunity.", transform.gameObject.name, AILevel));
                         MoveAnimatronic();
 
                         canHaveOpportunity = true;
@@ -175,8 +175,8 @@ public class Myskus : MonoBehaviour {
         int randomValue = rng.Next(1, 20);
         if (AILevel >= randomValue) {
             if (currentPosIndex != positionIndex.Count - 1) { // Is the animatronic ready to jumpscar?
-                Debug.Log(string.Format("{0} with AI Level {1} has moved.", transform.gameObject.name, AILevel));
-                int newPos = currentPosIndex + rng.Next(1, 2);
+                // Debug.Log(string.Format("{0} with AI Level {1} has moved.", transform.gameObject.name, AILevel));
+                int newPos = currentPosIndex + 1;
                 transform.position = restaurantPositions[positionIndex[newPos]];
                 transform.eulerAngles = restaurantRotations[positionIndex[newPos]];
                 currentPosIndex = newPos;
@@ -200,13 +200,14 @@ public class Myskus : MonoBehaviour {
                 camButtonsScript.ToggleCamButtons("Cam1A");
                 tabletScript.currentCam = "Cam1A";
                 camButtonsScript.camToggleSFX.Play();
-                tabletScript.Cam1B();
+                tabletScript.Cam1A();
             }
         }
 
         runSFX.Play();
         animator.enabled = true;
-        yield return new WaitForSeconds(1.5f);
+        Debug.LogAssertion(string.Format("JUMPSCARE MYSKUS APPROACHING; {0}", doorScript.doorIsOpen));
+        yield return new WaitForSeconds(1.8f);
         if (doorScript.doorIsOpen) {
             animator.SetBool("doorIsOpen", true);
             StartCoroutine(Jumpscare());
@@ -223,6 +224,7 @@ public class Myskus : MonoBehaviour {
     }
 
     IEnumerator Jumpscare() {
+        Debug.LogAssertion("JUMPSCARE MYSKUS");
         realtimeLight.SetActive(true);
         if (tabletScript.isLooking) {
             camLookScript.SwitchTablet();

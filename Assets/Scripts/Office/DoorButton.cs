@@ -16,22 +16,26 @@ public class DoorButton : MonoBehaviour {
                 
                 if (doors[0].GetComponent<Animator>().GetBool("buttonPressed")) {
                     doors[0].GetComponent<Animator>().SetBool("buttonPressed", false);
-                    batteryScript.dischargeFloat--;
+                    // batteryScript.dischargeFloat--;
+                    batteryScript.dischargeFloat = batteryScript.dischargeFloat - 800f;
                     doorIsOpen = true;
                 } else {
                     doors[0].GetComponent<Animator>().SetBool("buttonPressed", true);
-                    batteryScript.dischargeFloat++;
+                    // batteryScript.dischargeFloat++;
+                    batteryScript.dischargeFloat = batteryScript.dischargeFloat + 800f;
                     doorIsOpen = false;
                 }
             } else if (gameObject.tag == "DoorButtonRight") {
 
                 if (doors[1].GetComponent<Animator>().GetBool("buttonPressed")) {
                     doors[1].GetComponent<Animator>().SetBool("buttonPressed", false);
-                    batteryScript.dischargeFloat--;
+                    //batteryScript.dischargeFloat--;
+                    batteryScript.dischargeFloat = batteryScript.dischargeFloat - 800f;
                     doorIsOpen = true;
                 } else {
                     doors[1].GetComponent<Animator>().SetBool("buttonPressed", true);
-                    batteryScript.dischargeFloat++;
+                    //batteryScript.dischargeFloat++;
+                    batteryScript.dischargeFloat = batteryScript.dischargeFloat + 800f;
                     doorIsOpen = false;
                 }
             }

@@ -10,7 +10,7 @@ public class Zajic : MonoBehaviour {
         { "podium", new Vector3(2.87f, 1.346f, 17.79f) },
         { "mainArea", new Vector3(5.816f, 0.953f, 10.589f) },
         { "restroom", new Vector3(13.718f, 0.953f, 13.676f) },
-        { "kitchen", new Vector3(19.29f, 10.6f, -19.29f) },
+        { "kitchen", new Vector3(6.58f, 1.58f, 3.03f) },
         { "hallwayTop", new Vector3(-5.622f, 0.953f, 1.71f) },
         { "hallwayCorner", new Vector3(-6.276f, 0.953f, -10.681f) },
         { "door", new Vector3(-5.78f, 0.953f, -7.36f) }
@@ -45,19 +45,39 @@ public class Zajic : MonoBehaviour {
     public DoorButton doorScript;
     public GameTime gameTimeScript;
     public GameObject realtimeLight;
+    public AudioSource kitchenSounds;
 
     private bool movementOpportunity = false;
     private bool canHaveOpportunity = true;
     private int currentPosIndex = 0;
-    private int lockAfterDoorAttempt = 0;
     private int opportunitiesInKitchen;
     private Vector3 initialPos;
+    private bool isPlayingKitchenSounds = false;
     System.Random rng = new System.Random();
     
     void Start() {
-        StartCoroutine(giveOpportunity());
+        opportunitiesInKitchen = gameTimeScript.currentNight < 7 ? AILevel / 2 : PlayerPrefs.GetInt("ZajicAI") / 2;
         initialPos = restaurantPositions["podium"];
-        opportunitiesInKitchen = 2 * gameTimeScript.currentNight;
+        StartCoroutine(giveOpportunity());
+    }
+
+    void Update() {
+        int initTime = 0;
+        if (gameTimeScript.time != initTime) {
+            if (positionIndex[currentPosIndex] == "kitchen") {
+                if (!kitchenSounds.isPlaying) {
+                    kitchenSounds.loop = true;
+                    kitchenSounds.Play();
+                }
+            } else {
+                if (kitchenSounds.isPlaying) {
+                    kitchenSounds.loop = false;
+                    kitchenSounds.Stop();
+                }
+            }
+
+            initTime = gameTimeScript.time;
+        }
     }
 
     int getMovementPositon() {
@@ -140,14 +160,17 @@ public class Zajic : MonoBehaviour {
                 switch (gameTimeScript.time) {
                     case 86 * 2:
                         AILevel = 6;
+                        opportunitiesInKitchen = AILevel / 2;
                         break;
 
                     case 86 * 3:
                         AILevel = 7;
+                        opportunitiesInKitchen = AILevel / 2;
                         break;
 
                     case 86 * 4:
                         AILevel = 8;
+                        opportunitiesInKitchen = AILevel / 2;
                         break;
                 }
                 break;
@@ -156,14 +179,17 @@ public class Zajic : MonoBehaviour {
                 switch (gameTimeScript.time) {
                     case 86 * 2:
                         AILevel = 11;
+                        opportunitiesInKitchen = AILevel / 2;
                         break;
 
                     case 86 * 3:
                         AILevel = 12;
+                        opportunitiesInKitchen = AILevel / 2;
                         break;
 
                     case 86 * 4:
                         AILevel = 13;
+                        opportunitiesInKitchen = AILevel / 2;
                         break;
                 }
                 break;
@@ -178,17 +204,14 @@ public class Zajic : MonoBehaviour {
         while (true) {
             yield return new WaitForSeconds(4);
 
-            if (fanScript.getTemperature() > 28) {
-                if (lockAfterDoorAttempt > 0) {
-                    if (canHaveOpportunity ) {
-                        canHaveOpportunity = false;
-                        movementOpportunity = true;
+            if (fanScript.getTemperature() > 26) {
+                Debug.LogAssertion("IT'S HOT ENOUGH");
+                if (canHaveOpportunity ) {
+                    canHaveOpportunity = false;
+                    movementOpportunity = true;
 
-                        Debug.Log(string.Format("{0} with AI Level {1} can have an opportunity.", transform.gameObject.name, AILevel));
-                        MoveAnimatronic();
-                    }
-                } else {
-                    lockAfterDoorAttempt--;
+                    Debug.Log(string.Format("{0} with AI Level {1} can have an opportunity. Opportunities in kitchen: {2}; Pos index: {3}", transform.gameObject.name, AILevel, opportunitiesInKitchen, positionIndex[currentPosIndex]));
+                    MoveAnimatronicAttempt();
                 }
                 canHaveOpportunity = true;
                 movementOpportunity = false;
@@ -198,20 +221,21 @@ public class Zajic : MonoBehaviour {
         }
     }
 
-    void MoveAnimatronic() {
+    void MoveAnimatronicAttempt() {
         int randomValue = rng.Next(1, 20);
         if (AILevel >= randomValue) {
             if (currentPosIndex != positionIndex.Count - 1) { // Is the animatronic NOT in a door?
                 if (positionIndex[currentPosIndex] == "kitchen") {
-                    if (opportunitiesInKitchen > 0) {
+                    if (opportunitiesInKitchen != 0) {
+                        Debug.Log("Oh johnny leave her");
                         opportunitiesInKitchen--;
+                    } else {
+                        Debug.Log("Fine I\'ll leave her");
+                        MoveAnimatronic();
+                        opportunitiesInKitchen = AILevel / 2;
                     }
                 } else {
-                    Debug.Log(string.Format("{0} with AI Level {1} has moved.", transform.gameObject.name, AILevel));
-                    int newPos = currentPosIndex + rng.Next(1, 2);
-                    transform.position = restaurantPositions[positionIndex[newPos]];
-                    transform.eulerAngles = restaurantRotations[positionIndex[newPos]];
-                    currentPosIndex = newPos;
+                    MoveAnimatronic();
                 }
             }  else {
                 if (doorScript.doorIsOpen) {
@@ -219,18 +243,31 @@ public class Zajic : MonoBehaviour {
                         StartCoroutine(Jumpscare());
                     }
                 } else {
-                    Debug.Log(string.Format("{0} with AI Level {1} has moved.", transform.gameObject.name, AILevel));
-                    int newPos = currentPosIndex - rng.Next(1, 2);
-                    transform.position = restaurantPositions[positionIndex[newPos]];
-                    transform.eulerAngles = restaurantRotations[positionIndex[newPos]];
-                    currentPosIndex = newPos;
-                    lockAfterDoorAttempt = 3;
+                    MoveAnimatronicBack();
                 }
             }
         }
     }
 
+    void MoveAnimatronic() {
+        Debug.Log(string.Format("{0} with AI Level {1} has moved.", transform.gameObject.name, AILevel));
+        int newPos = currentPosIndex + rng.Next(1, 2);
+        transform.position = restaurantPositions[positionIndex[newPos]];
+        transform.eulerAngles = restaurantRotations[positionIndex[newPos]];
+        currentPosIndex = newPos;
+    }
+
+    void MoveAnimatronicBack() {
+        Debug.Log(string.Format("{0} with AI Level {1} has moved.", transform.gameObject.name, AILevel));
+        int newPos = currentPosIndex - rng.Next(1, 5);
+        transform.position = restaurantPositions[positionIndex[newPos]];
+        transform.eulerAngles = restaurantRotations[positionIndex[newPos]];
+        currentPosIndex = newPos;
+    }
+
     IEnumerator Jumpscare() {
+        Debug.LogAssertion("JUMPSCARE ZAJIC");
+        realtimeLight.SetActive(true);
         PlayerPrefs.SetInt("night", SceneManager.GetActiveScene().buildIndex - 2);
         camLookScript.SwitchTablet();
         GetComponent<Animator>().enabled = true;

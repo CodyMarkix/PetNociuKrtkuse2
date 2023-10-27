@@ -18,9 +18,9 @@ Po pravé straně je sekce "Releases", kde po rozkliknutí uvidíte list všech 
 ![Sekce releases](./Github/releaseExample.png)
 
 Alternativně, zde můžete přímo stáhnout nejnovější
-- [Windows vydání](https://github.com/CodyMarkix/PyZ-shell/releases/latest/download/PetNociuKrtkuse2.zip)
-- [Linux vydání](https://github.com/CodyMarkix/PyZ-shell/releases/latest/download/PetNociuKrtkuse2.tar.gz)
-- [Android vydání](https://github.com/CodyMarkix/PyZ-shell/releases/latest/download/PetNociuKrtkuse2.apk)
+- [Windows vydání (64-bit)](https://github.com/CodyMarkix/PyZ-shell/releases/latest/download/PetNociuKrtkuse2-x64.zip)
+- [Linux vydání (64-bit)](https://github.com/CodyMarkix/PyZ-shell/releases/latest/download/PetNociuKrtkuse2-x64.tar.gz)
+- Android vydání - prozatím nedostupné!
 - [Github Actions (Nightly) vydání](https://github.com/CodyMarkix/PetNociuKrtkuse2/actions/workflows/main.yml)
 
 ![For Players](./Github/howPlay.png)
@@ -29,9 +29,11 @@ Alternativně, zde můžete přímo stáhnout nejnovější
 
 (Podle české ISO klávesnice)
 
+- Esc = Exit
 - A/D/Myš = pohyb kamerou
 - S/Pohyb myší dolů = Zapnutí/Vypnutí tabletu
-- Z = Zapnutí/Vypnutí větráku
+- Mezerník v tabletě = Toggle světla
+- Y = Zapnutí/Vypnutí větráku
 
 ### Gameplay
 

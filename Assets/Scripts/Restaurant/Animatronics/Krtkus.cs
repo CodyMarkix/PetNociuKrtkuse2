@@ -33,13 +33,20 @@ public class Krtkus : MonoBehaviour {
         "door"
     };
 
+    [Header("AI values")]
     [Range(0, 20)]
     public int AILevel;
     public bool opportunityRandomness;
+
+    [Header("Scary spoopy")]
+    public AudioSource inDoorSound;
+
+    [Header("External Scripts")]
     public Fan fanScript;
     public CameraLook camLookScript;
     public Tablet tabletScript;
     public DoorButton doorScript;
+    public LightButton lightScript;
     public GameTime gameTimeScript;
     public GameObject realtimeLight;
 
@@ -47,6 +54,7 @@ public class Krtkus : MonoBehaviour {
     private bool canHaveOpportunity = true;
     private int currentPosIndex = 0;
     private Vector3 initialPos;
+    private bool beenNoticedInDoor = false;
     System.Random rng = new System.Random();
     
     void Start() {
@@ -166,6 +174,15 @@ public class Krtkus : MonoBehaviour {
                 AILevel = PlayerPrefs.GetInt("KrtkusAI");
                 break;
         }
+
+        if (lightScript.isShiningRight && positionIndex[currentPosIndex] == "door") {
+            if (!beenNoticedInDoor) {
+                if (!inDoorSound.isPlaying) {
+                    inDoorSound.Play();
+                    beenNoticedInDoor = true;
+                }
+            }
+        }
     }
 
     IEnumerator giveOpportunity() {
@@ -175,7 +192,7 @@ public class Krtkus : MonoBehaviour {
                 canHaveOpportunity = false;
                 movementOpportunity = true;
 
-                Debug.Log(string.Format("{0} with AI Level {1} can have an opportunity.", transform.gameObject.name, AILevel));
+                // Debug.Log(string.Format("{0} with AI Level {1} can have an opportunity.", transform.gameObject.name, AILevel));
                 MoveAnimatronic();
 
                 movementOpportunity = false;
@@ -191,29 +208,32 @@ public class Krtkus : MonoBehaviour {
         if (AILevel >= randomValue) {
             if (currentPosIndex != positionIndex.Count - 1) { // Is the animatronic in a door?
                 // If not, move it to another position
-                Debug.Log(string.Format("{0} with AI Level {1} has moved.", transform.gameObject.name, AILevel));
+                // Debug.Log(string.Format("{0} with AI Level {1} has moved.", transform.gameObject.name, AILevel));
                 int newPos = currentPosIndex + rng.Next(1, 2);
                 transform.position = restaurantPositions[positionIndex[newPos]];
                 transform.eulerAngles = restaurantRotations[positionIndex[newPos]];
                 currentPosIndex = newPos;
             }  else {
-                // Or you can just jumpscare the guy
+                // Or you can just jumpscare the guy...
                 if (doorScript.doorIsOpen) {
+                    // ...if the door is open that is
                     if (tabletScript.isLooking) {
                         StartCoroutine(Jumpscare());
                     }
                 } else {
-                    Debug.Log(string.Format("{0} with AI Level {1} has moved.", transform.gameObject.name, AILevel));
-                    int newPos = currentPosIndex - rng.Next(1, 2);
+                    // Debug.Log(string.Format("{0} with AI Level {1} has moved.", transform.gameObject.name, AILevel));
+                    int newPos = currentPosIndex - rng.Next(1, 4);
                     transform.position = restaurantPositions[positionIndex[newPos]];
                     transform.eulerAngles = restaurantRotations[positionIndex[newPos]];
                     currentPosIndex = newPos;
+                    beenNoticedInDoor = false;
                 }
             }
         }
     }
 
     public IEnumerator Jumpscare() {
+        Debug.LogAssertion("JUMPSCARE KRTKUS");
         realtimeLight.SetActive(true);
         PlayerPrefs.SetInt("night", SceneManager.GetActiveScene().buildIndex - 2);
         camLookScript.SwitchTablet();

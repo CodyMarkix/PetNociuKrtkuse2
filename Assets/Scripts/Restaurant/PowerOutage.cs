@@ -40,6 +40,7 @@ public class PowerOutage : MonoBehaviour {
     IEnumerator PlayPowerOutageSound() {
         fanScript.GetComponent<AudioSource>().Stop();
         powerOutSound.Play();
+        MainCamera.GetComponents<AudioSource>()[1].Play();
         yield return new WaitForSeconds(4.749f);
         StartCoroutine(PlaySusMusic());
     }
