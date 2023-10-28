@@ -3,7 +3,7 @@
 <h1 align="center"> Pět nocí u Krtkuse 2 </h1>
 
 <div align="center">
-    <img alt="Discord" src="https://img.shields.io/discord/1135877259018907698"> <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/CodyMarkix/PetNociuKrtkuse2"> <img alt="GitHub issues" src="https://img.shields.io/github/issues/CodyMarkix/PetNociuKrtkuse2"> <img alt="GitHub Workflow Status (with event)" src="https://img.shields.io/github/actions/workflow/status/:user/:repo/:workflow">
+    <img alt="Discord" src="https://img.shields.io/discord/1135877259018907698"> <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/CodyMarkix/PetNociuKrtkuse2"> <img alt="GitHub issues" src="https://img.shields.io/github/issues/CodyMarkix/PetNociuKrtkuse2"> <img alt="GitHub Workflow Status (with event)" src="https://img.shields.io/github/actions/workflow/status/CodyMarkix/PetNociuKrtkuse2/main.yml">
 
 </div>
 

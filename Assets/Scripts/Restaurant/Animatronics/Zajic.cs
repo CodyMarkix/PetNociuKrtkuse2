@@ -23,7 +23,7 @@ public class Zajic : MonoBehaviour {
         { "kitchen", new Vector3(90f, 180f, 0f) },
         { "hallwayTop", new Vector3(90f, 180f, 0f) },
         { "hallwayCorner", new Vector3(90f, 180f, 133.593f) },
-        { "door", new Vector3(90f, 270f, 57.466f) }
+        { "door", new Vector3(90f, 180f, 57.187f) }
     };
 
     private List<string> positionIndex = new List<string> { 
