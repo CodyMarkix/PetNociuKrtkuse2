@@ -9,7 +9,7 @@
 
 <br>
 
-Pět Nocí u Krtkuse 2 je FOSS pokračování [Pěti Nocí u Krtkuse od Vojty536](https://vojtazas.itch.io/pet-noci-u-velkeho-krtkuse) a tentokrát si krtkus s jeho bandou nezahrávají!
+Pět Nocí u Krtkuse 2 je FOSS pokračování [Pěti Nocí u Krtkuse od Vojty536](https://vojtazas.itch.io/pet-noci-u-velkeho-krtkuse) a tentokrát si Krtkus s jeho bandou nezahrávají!
 
 ![How download](./Github/howDownload.png)
 
