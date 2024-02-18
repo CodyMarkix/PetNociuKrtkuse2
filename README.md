@@ -27,7 +27,7 @@ Alternativně, zde můžete přímo stáhnout nejnovější
 
 ### Ovládání
 
-(Podle české ISO klávesnice)
+(Podle české klávesnice)
 
 - Esc = Exit
 - A/D/Myš = pohyb kamerou
