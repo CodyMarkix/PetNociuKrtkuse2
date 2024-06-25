@@ -45,7 +45,9 @@ public class CameraLook : MonoBehaviour {
 
     void Update() {
         switch (Application.platform) {
-            case RuntimePlatform.WindowsEditor or RuntimePlatform.WindowsPlayer:
+            case RuntimePlatform.WindowsEditor or RuntimePlatform.WindowsPlayer
+                or RuntimePlatform.LinuxEditor or RuntimePlatform.LinuxPlayer
+                or RuntimePlatform.OSXEditor or RuntimePlatform.OSXEditor:
                 mousex = Mouse.current.position.x.ReadValue();
                 mousey = Mouse.current.position.y.ReadValue();
                 break;
@@ -82,49 +84,49 @@ public class CameraLook : MonoBehaviour {
         SwitchTablet();
     }
 
-    void SwitchView(string whereToLook) {
-        if (!tabletScript.isLooking){
-            if (canDoInput) {
-                switch (whereToLook) {
-                    case "left":
-                        if (!anim.IsInTransition(0)) {
-                            switch (anim.GetInteger("Looking")) {
-                                case -1:
-                                    break;
+    void SwitchView(string whereToLook)
+    {
+        if (tabletScript.isLooking) return;
+        if (!canDoInput) return;
+        
+        switch (whereToLook) {
+            case "left":
+                if (!anim.IsInTransition(0)) {
+                    switch (anim.GetInteger("Looking")) {
+                        case -1:
+                            break;
                                 
-                                case 0:
-                                    isLookingAtDoor = true;
-                                    anim.SetInteger("Looking", -1);
-                                    break;
+                        case 0:
+                            isLookingAtDoor = true;
+                            anim.SetInteger("Looking", -1);
+                            break;
                                 
-                                case 1:
-                                    isLookingAtDoor = false;
-                                    anim.SetInteger("Looking", 0);
-                                    break;
-                            }
-                        }
-                        break;
-                
-                    case "right":
-                        if (!anim.IsInTransition(0)) {
-                                switch (anim.GetInteger("Looking")) {
-                                    case -1:
-                                        isLookingAtDoor = false;
-                                        anim.SetInteger("Looking", 0);
-                                        break;
-                                    
-                                    case 0:
-                                        isLookingAtDoor = true;
-                                        anim.SetInteger("Looking", 1);
-                                        break;
-                                    
-                                    case 1:
-                                        break;
-                                }
-                        }
-                        break;
+                        case 1:
+                            isLookingAtDoor = false;
+                            anim.SetInteger("Looking", 0);
+                            break;
+                    }
                 }
-            }
+                break;
+                
+            case "right":
+                if (!anim.IsInTransition(0)) {
+                    switch (anim.GetInteger("Looking")) {
+                        case -1:
+                            isLookingAtDoor = false;
+                            anim.SetInteger("Looking", 0);
+                            break;
+                                    
+                        case 0:
+                            isLookingAtDoor = true;
+                            anim.SetInteger("Looking", 1);
+                            break;
+                                    
+                        case 1:
+                            break;
+                    }
+                }
+                break;
         }
     }
     
