@@ -73,9 +73,6 @@ public class Battery : MonoBehaviour {
                 : 100;
             
             batteryPercentage.text = string.Format("{0}%", percentage);
-            Debug.LogAssertion(string.Format("Charge: {0}; Discharge Float: {1}", charge, dischargeFloat));
-
-            // band-aid patch to get the game out as I promised, working on the issue! >~<
             if (dischargeFloat < 0) {
                 /*
                     A negative number can result in battery charge going up and over 100%,
