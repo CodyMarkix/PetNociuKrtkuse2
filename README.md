@@ -20,7 +20,7 @@ Po pravé straně je sekce "Releases", kde po rozkliknutí uvidíte list všech 
 Alternativně, zde můžete přímo stáhnout nejnovější
 - [Windows vydání (64-bit)](https://github.com/CodyMarkix/PetNociuKrtkuse2/releases/latest/download/PetNociuKrtkuse2-x64.zip)
 - [Linux vydání (64-bit)](https://github.com/CodyMarkix/PetNociuKrtkuse2/releases/latest/download/PetNociuKrtkuse2-x64.tar.gz)
-- Android vydání - prozatím nedostupné!
+- [Android vydání (ve velmi early alphě, prozatím v nehratelném stavu)](https://github.com/CodyMarkix/PetNociUKrtkuse2-Android) 
 - [Github Actions (Nightly) vydání](https://github.com/CodyMarkix/PetNociuKrtkuse2/actions/workflows/main.yml)
 
 ![For Players](./Github/howPlay.png)
