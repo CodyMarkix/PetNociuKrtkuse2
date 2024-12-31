@@ -1,10 +1,7 @@
 name: Build Krtkus
 
 on: 
-  push:
-    branches:
-      - development
-  workflow_dispatch:
+  workflow_dispatch: {}
 
 jobs:
   build:
