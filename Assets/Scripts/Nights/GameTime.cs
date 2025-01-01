@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
+using System.Timers;
+using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,12 +14,6 @@ public class GameTime : MonoBehaviour {
     [System.NonSerialized]
     public int currentNight;
 
-    int hour1 = 86;
-    int hour2;
-    int hour3;
-    int hour4;
-    int hour5;
-
     private SixAM sixAmScript;
 
     void Awake() {
@@ -27,11 +23,6 @@ public class GameTime : MonoBehaviour {
     void Start() {
         text = GetComponent<TMPro.TMP_Text>();
         sixAmScript = GetComponent<SixAM>();
-        
-        hour2 = hour1 * 2;
-        hour3 = hour1 * 3;
-        hour4 = hour1 * 4;
-        hour5 = hour1 * 5;
 
         text.text = "12 AM";
         StartCoroutine(timeIncrease());
@@ -69,18 +60,24 @@ public class GameTime : MonoBehaviour {
         }
     }
 
-    public static string ConvertTimeToHours(int ms) {
-        return ms switch
-        {
-            <86 => "12 AM",
-            86 => "1 AM",
-            86 * 2 => "2 AM",
-            86 * 3 => "3 AM",
-            86 * 4 => "4 AM",
-            86 * 5 => "5 AM",
-            86 * 6 => "6 AM",
-            _ => "",
-        };
+    public static string ConvertTimeToHours(int ms, int hourLength) {
+        if (ms < hourLength) {
+            return "12 AM";
+        } else if (hourLength <= ms && ms < hourLength * 2) {
+            return "1 AM";
+        } else if (hourLength * 2 <= ms && ms < hourLength * 3) {
+            return "2 AM";
+        } else if (hourLength * 3 <= ms && ms < hourLength * 4) {
+            return "3 AM";
+        } else if (hourLength * 4 <= ms && ms < hourLength * 5) {
+            return "4 AM";
+        } else if (hourLength * 5 <= ms && ms < hourLength * 6) {
+            return "5 AM";
+        } else if (hourLength * 6 <= ms) {
+            return "6 AM";
+        } else {
+            return "";
+        }
     }
 
     // Akorát počítá vteřiny
@@ -88,6 +85,7 @@ public class GameTime : MonoBehaviour {
         while (true) {
             yield return new WaitForSeconds(1);
             time++;
+            Debug.Log(string.Format("Time (ms): {0}", time));
         }
     } 
 }
