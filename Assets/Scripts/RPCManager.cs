@@ -25,7 +25,6 @@ public class RPCManager : MonoBehaviour {
 
         currentScene = SceneManager.GetActiveScene().buildIndex;
 
-        System.Environment.SetEnvironmentVariable("DISCORD_INSTANCE_ID", "0");
         discord = new Discord.Discord(clientId, (UInt64)Discord.CreateFlags.Default);
         activityManager = discord.GetActivityManager();
 
