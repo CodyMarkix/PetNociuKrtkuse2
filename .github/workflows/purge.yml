@@ -1,0 +1,15 @@
+name: 'Purge artifacts'
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+  purge:
+    name: Purge old artifacts
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: kolpav/purge-artifacts-action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          expire-in: 0
