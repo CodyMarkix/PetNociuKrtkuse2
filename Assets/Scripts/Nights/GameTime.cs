@@ -69,6 +69,20 @@ public class GameTime : MonoBehaviour {
         }
     }
 
+    public static string ConvertTimeToHours(int ms) {
+        return ms switch
+        {
+            <86 => "12 AM",
+            86 => "1 AM",
+            86 * 2 => "2 AM",
+            86 * 3 => "3 AM",
+            86 * 4 => "4 AM",
+            86 * 5 => "5 AM",
+            86 * 6 => "6 AM",
+            _ => "",
+        };
+    }
+
     // Akorát počítá vteřiny
     IEnumerator timeIncrease() {
         while (true) {
