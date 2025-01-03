@@ -1,0 +1,185 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LightHTTP</name>
+    </assembly>
+    <members>
+        <member name="T:LightHTTP.Handling.LightHttpAsyncHandleDelegate">
+            <summary>
+            Defines the signature of <see cref="M:LightHTTP.Handling.ILightHttpHandler.HandleAsync(System.Net.HttpListenerContext,System.Threading.CancellationToken)"/>.
+            </summary>
+        </member>
+        <member name="T:LightHTTP.Handling.LightHttpHandleDelegate">
+            <summary>
+            Defines the synchronous version of <see cref="T:LightHTTP.Handling.LightHttpAsyncHandleDelegate"/>.
+            </summary>
+        </member>
+        <member name="T:LightHTTP.Handling.Handlers.NotFoundHandler">
+            <summary>
+            Responds any request with 404 Not Found.
+            </summary>
+        </member>
+        <member name="F:LightHTTP.Handling.Handlers.NotFoundHandler.Instance">
+            <summary>
+            Gets the singleton instance of <see cref="T:LightHTTP.Handling.Handlers.NotFoundHandler"/>.
+            </summary>
+        </member>
+        <member name="M:LightHTTP.Handling.Handlers.NotFoundHandler.AcceptsPath(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:LightHTTP.Handling.Handlers.NotFoundHandler.HandleAsync(System.Net.HttpListenerContext,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="T:LightHTTP.Handling.ILightHttpHandler">
+            <summary>
+            When implemented, handles routed HTTP requests.
+            </summary>
+        </member>
+        <member name="M:LightHTTP.Handling.ILightHttpHandler.AcceptsPath(System.String)">
+            <summary>
+            Determines whether or not this handler accepts the specified <paramref name="path"/>.
+            </summary>
+        </member>
+        <member name="M:LightHTTP.Handling.ILightHttpHandler.HandleAsync(System.Net.HttpListenerContext,System.Threading.CancellationToken)">
+            <summary>
+            Handles the request.
+            </summary>
+        </member>
+        <member name="T:LightHTTP.Handling.ILightHttpHandlerRegistry">
+            <summary>
+            Describes an object that registers handlers.
+            </summary>
+        </member>
+        <member name="M:LightHTTP.Handling.ILightHttpHandlerRegistry.Handles(LightHTTP.Handling.ILightHttpHandler)">
+            <summary>
+            Registers the <paramref name="handler"/>.
+            </summary>
+        </member>
+        <member name="P:LightHTTP.Handling.LightHttpHandlerManager.FallbackHandler">
+            <summary>
+            Gets or sets the handler that is used when there are no registered handlers that would accept the request.
+            </summary>
+        </member>
+        <member name="T:LightHTTP.LightHttpHandlerRegistryExtensions">
+            <summary>
+            Defines extension methods on <see cref="T:LightHTTP.Handling.ILightHttpHandlerRegistry"/>.
+            </summary>
+        </member>
+        <member name="M:LightHTTP.LightHttpHandlerRegistryExtensions.Handles(LightHTTP.Handling.ILightHttpHandlerRegistry,System.Func{System.String,System.Boolean},LightHTTP.Handling.LightHttpAsyncHandleDelegate)">
+            <summary>
+            Registers a handler with the specified delegates.
+            </summary>
+            <param name="registry">The handler registry</param>
+            <param name="acceptsPath">The method that given a path, determines whether the request should be handled.</param>
+            <param name="handle">The handler method</param>
+        </member>
+        <member name="M:LightHTTP.LightHttpHandlerRegistryExtensions.Handles(LightHTTP.Handling.ILightHttpHandlerRegistry,System.Func{System.String,System.Boolean},LightHTTP.Handling.LightHttpHandleDelegate)">
+            <summary>
+            Registers a handler with the specified delegates.
+            </summary>
+            <param name="registry">The handler registry</param>
+            <param name="acceptsPath">The method that given a path, determines whether the request should be handled.</param>
+            <param name="handle">The handler method</param>
+        </member>
+        <member name="M:LightHTTP.LightHttpHandlerRegistryExtensions.Handles``1(LightHTTP.Handling.ILightHttpHandlerRegistry)">
+            <summary>
+            Instantiates <typeparamref name="THandler"/> using the paramaterless constructor and registers it.
+            </summary>
+        </member>
+        <member name="M:LightHTTP.LightHttpHandlerRegistryExtensions.HandlesPath(LightHTTP.Handling.ILightHttpHandlerRegistry,System.String,LightHTTP.Handling.LightHttpAsyncHandleDelegate,System.StringComparison)">
+            <summary>
+            Defines a handler for the exact path.
+            </summary>
+        </member>
+        <member name="M:LightHTTP.LightHttpHandlerRegistryExtensions.HandlesPath(LightHTTP.Handling.ILightHttpHandlerRegistry,System.String,LightHTTP.Handling.LightHttpHandleDelegate,System.StringComparison)">
+            <summary>
+            Defines a handler for the exact path.
+            </summary>
+        </member>
+        <member name="M:LightHTTP.LightHttpHandlerRegistryExtensions.HandlesRegex(LightHTTP.Handling.ILightHttpHandlerRegistry,System.Text.RegularExpressions.Regex,LightHTTP.Handling.LightHttpAsyncHandleDelegate)">
+            <summary>
+            Defines a handler for any path matched by <paramref name="pathRegex"/>.
+            </summary>
+        </member>
+        <member name="M:LightHTTP.LightHttpHandlerRegistryExtensions.HandlesRegex(LightHTTP.Handling.ILightHttpHandlerRegistry,System.Text.RegularExpressions.Regex,LightHTTP.Handling.LightHttpHandleDelegate)">
+            <summary>
+            Defines a handler for any path matched by <paramref name="pathRegex"/>.
+            </summary>
+        </member>
+        <member name="M:LightHTTP.LightHttpHandlerRegistryExtensions.HandlesRegex(LightHTTP.Handling.ILightHttpHandlerRegistry,System.String,LightHTTP.Handling.LightHttpAsyncHandleDelegate)">
+            <summary>
+            Defines a handler for any path matched by <paramref name="pathRegexPattern"/>.
+            </summary>
+        </member>
+        <member name="M:LightHTTP.LightHttpHandlerRegistryExtensions.HandlesRegex(LightHTTP.Handling.ILightHttpHandlerRegistry,System.String,LightHTTP.Handling.LightHttpHandleDelegate)">
+            <summary>
+            Defines a handler for any path matched by <paramref name="pathRegexPattern"/>.
+            </summary>
+        </member>
+        <member name="M:LightHTTP.LightHttpHandlerRegistryExtensions.HandlesStaticFile(LightHTTP.Handling.ILightHttpHandlerRegistry,System.String,System.String,System.Int32)">
+            <summary>
+            Defines a handler for the exact path.
+            </summary>
+        </member>
+        <member name="T:LightHTTP.LightHttpServer">
+            <summary>
+            Serves HTTP requests.
+            </summary>
+        </member>
+        <member name="M:LightHTTP.LightHttpServer.#ctor(System.Net.HttpListener,System.Boolean)">
+            <summary>
+            Creates a new HTTP server wrapping <paramref name="listener"/>.
+            </summary>
+        </member>
+        <member name="M:LightHTTP.LightHttpServer.#ctor">
+            <summary>
+            Creates a new HTTP server.
+            </summary>
+        </member>
+        <member name="E:LightHTTP.LightHttpServer.UnhandledExceptionThrown">
+            <summary>
+            Invoked when an unhandled exception occurs during handling an HTTP request.
+            </summary>
+        </member>
+        <member name="E:LightHTTP.LightHttpServer.RequestAccepted">
+            <summary>
+            Invoked when a new HTTP request is accepted.
+            </summary>
+        </member>
+        <member name="E:LightHTTP.LightHttpServer.RequestServed">
+            <summary>
+            Invoked when an HTTP request is served.
+            </summary>
+        </member>
+        <member name="P:LightHTTP.LightHttpServer.Listener">
+            <summary>
+            Gets the <see cref="T:System.Net.HttpListener"/> instance.
+            </summary>
+        </member>
+        <member name="M:LightHTTP.LightHttpServer.AddAvailableLocalPrefix">
+            <summary>
+            Adds an automatically generated prefix to the HTTP listener.
+            This method is useful for testing scenarios.
+            </summary>
+            <returns>
+            The prefix in the following format: 'http://host:port/'
+            </returns>
+        </member>
+        <member name="M:LightHTTP.LightHttpServer.Handles(LightHTTP.Handling.ILightHttpHandler)">
+            <inheritdoc />
+        </member>
+        <member name="M:LightHTTP.LightHttpServer.Start">
+            <summary>
+            Starts handling requests.
+            </summary>
+        </member>
+        <member name="M:LightHTTP.LightHttpServer.Stop">
+            <summary>
+            Stops handling requests.
+            </summary>
+        </member>
+        <member name="M:LightHTTP.LightHttpServer.Dispose">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

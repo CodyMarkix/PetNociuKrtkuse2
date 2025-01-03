@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>LightHTTP</id>
+    <version>1.0.2</version>
+    <authors>Javid Shoaei</authors>
+    <projectUrl>https://github.com/javidsho/LightHTTP</projectUrl>
+    <description>Lightweight HTTP server for mocking, testing, and other generic purposes</description>
+    <copyright>Copyright (C) 2022 Javid Shoaei</copyright>
+    <tags>http,server,http-server,mock,lightweight,httplistener</tags>
+    <dependencies>
+      <group targetFramework=".NETStandard2.0" />
+    </dependencies>
+  </metadata>
+</package>
