@@ -11,7 +11,9 @@ public class AudioSlider : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public string exposedParameter;
     [Range(-20, 20)]
     public float offset; // logarithmic
-    float sliderValue;
+    
+    [System.NonSerialized]
+    public float sliderValue;
 
     void Update() {
         sliderValue = gameObject.GetComponent<Slider>().value;
@@ -20,6 +22,11 @@ public class AudioSlider : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public void OnSliderChange() {
         Debug.Log(sliderValue);
         mixer.SetFloat(exposedParameter, (Mathf.Log10(sliderValue) * 20) + offset);
+    }
+
+    public void setSliderValue(float value) {
+        sliderValue = value;
+        OnSliderChange();
     }
 
     public void OnPointerDown(PointerEventData data) {
