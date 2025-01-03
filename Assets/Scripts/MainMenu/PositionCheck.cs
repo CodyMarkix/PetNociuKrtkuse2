@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using TMPro;
+using UnityEngine.Timeline;
 
 [RequireComponent(typeof(AudioSource))]
 public class PositionCheck : MonoBehaviour, IPointerEnterHandler {
@@ -17,33 +18,7 @@ public class PositionCheck : MonoBehaviour, IPointerEnterHandler {
     }
 
     public void OnPointerEnter(PointerEventData eventData) {
-
-        switch(gameObject.name) {
-            case "NewGame":
-                chevron.transform.position = gameObject.transform.position + offset;
-                audio.Play(0);
-                break;
-            
-            case "Continue":
-                chevron.transform.position = gameObject.transform.position + offset;
-                audio.Play(0);
-                break;
-
-            case "NightSix":
-                chevron.transform.position = gameObject.transform.position + offset;
-                audio.Play(0);
-                break;
-
-            case "NightSeven":
-                chevron.transform.position = gameObject.transform.position + offset;
-                audio.Play(0);
-                break;
-            
-            case "QuitGame":
-                chevron.transform.position = gameObject.transform.position + offset;
-                audio.Play(0);
-                break;
-        }
-    }
-    
+        chevron.transform.position = gameObject.transform.position + offset;
+        audio.Play(0);
+    }    
 }
